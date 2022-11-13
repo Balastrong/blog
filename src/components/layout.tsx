@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Header } from "./header";
+import { Header } from "components/Header";
 
 const Layout = ({ location, title, children }: any) => {
   return (

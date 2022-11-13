@@ -121,4 +121,5 @@ export const plugins: PluginRef[] = [
     },
   },
   "gatsby-plugin-sass",
+  "gatsby-plugin-root-import",
 ];
