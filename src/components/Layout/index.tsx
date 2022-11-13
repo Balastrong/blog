@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Header } from "components/Header";
 import { Section } from "types/gatsby";
+import "./Layout.scss";
 
 const Layout = ({
   section,
@@ -12,7 +13,7 @@ const Layout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="global-wrapper">
+    <div className="Layout">
       <Header section={section} />
       <main>{children}</main>
       <footer>
