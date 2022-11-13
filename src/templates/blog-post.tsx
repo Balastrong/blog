@@ -1,15 +1,26 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import { Post, SiteMetadata } from "../@types/gatsby";
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
+}: {
+  data: {
+    previous: Post;
+    next: Post;
+    site: {
+      siteMetadata: SiteMetadata;
+    };
+    markdownRemark: Post;
+  };
+  location: string;
 }) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
+  const siteTitle = site.siteMetadata?.title || `Title`;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -58,19 +69,25 @@ const BlogPostTemplate = ({
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
-export const Head = ({ data: { markdownRemark: post } }) => {
+export const Head = ({
+  data: { markdownRemark: post },
+}: {
+  data: {
+    markdownRemark: Post;
+  };
+}) => {
   return (
     <Seo
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
     />
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -110,4 +127,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
