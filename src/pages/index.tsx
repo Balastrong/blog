@@ -11,7 +11,7 @@ const BlogIndex = ({ data, location }: any) => {
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout section="blog" title="Blog Leonardo">
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -23,7 +23,7 @@ const BlogIndex = ({ data, location }: any) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout section="blog" title={siteTitle}>
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post: any) => {

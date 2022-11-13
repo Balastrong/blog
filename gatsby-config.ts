@@ -16,7 +16,10 @@ export const siteMetadata: SiteMetadata = {
   description: `A starter blog demonstrating what Gatsby can do.`,
   siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
   social: {
-    twitter: `balastrong`,
+    twitter: `https://twitter.com/balastrong`,
+    twitterHandle: `balastrong`,
+    youtube: "https://www.youtube.com/@DevLeonardo",
+    devto: "https://dev.to/balastrong",
   },
 };
 export const plugins: PluginRef[] = [

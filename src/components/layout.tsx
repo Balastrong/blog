@@ -1,10 +1,19 @@
 import * as React from "react";
 import { Header } from "components/Header";
+import { Section } from "types/gatsby";
 
-const Layout = ({ location, title, children }: any) => {
+const Layout = ({
+  section,
+  title,
+  children,
+}: {
+  section?: Section;
+  title: string;
+  children: React.ReactNode;
+}) => {
   return (
     <div className="global-wrapper">
-      <Header />
+      <Header section={section} />
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

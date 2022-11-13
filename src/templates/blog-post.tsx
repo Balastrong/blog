@@ -4,7 +4,7 @@ import * as React from "react";
 import Bio from "components/bio";
 import Layout from "components/layout";
 import Seo from "components/seo";
-import { Post, SiteMetadata } from "../@types/gatsby";
+import { Post, SiteMetadata } from "types/gatsby";
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -23,7 +23,7 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout section="blog" title={siteTitle}>
       <article
         className="blog-post"
         itemScope

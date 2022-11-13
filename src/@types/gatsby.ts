@@ -8,6 +8,9 @@ export type SiteMetadata = {
   siteUrl: string;
   social: {
     twitter: string;
+    twitterHandle: string;
+    youtube: string;
+    devto: string;
   };
 };
 
@@ -24,3 +27,5 @@ export type Post = {
   excerpt: string;
   html: string;
 };
+
+export type Section = "blog" | "youtube" | "about";
