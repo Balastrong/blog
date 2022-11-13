@@ -24,7 +24,6 @@ const BlogIndex = ({ data, location }: any) => {
 
   return (
     <Layout section="blog" title={siteTitle}>
-      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post: any) => {
           const title = post.frontmatter.title || post.fields.slug;

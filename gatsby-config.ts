@@ -11,10 +11,10 @@ export const siteMetadata: SiteMetadata = {
   title: `Leonardo's Blog`,
   author: {
     name: `Leonardo Montini`,
-    summary: `who lives and works in San Francisco building useful things.`,
+    summary: `Web Developer, Open Source enthusiast and Content Creator.`,
   },
-  description: `A starter blog demonstrating what Gatsby can do.`,
-  siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+  description: `Leonardo Montini's official website`,
+  siteUrl: `https://charming-strudel-f0618b.netlify.app/`,
   social: {
     twitter: `https://twitter.com/balastrong`,
     twitterHandle: `balastrong`,
@@ -104,7 +104,7 @@ export const plugins: PluginRef[] = [
               }
             }`,
           output: "/rss.xml",
-          title: "Gatsby Starter Blog RSS Feed",
+          title: "Leonardo's Blog RSS Feed",
         },
       ],
     },
@@ -112,8 +112,8 @@ export const plugins: PluginRef[] = [
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `Gatsby Starter Blog`,
-      short_name: `Gatsby`,
+      name: `Leonardo's Blog`,
+      short_name: `Leonardo`,
       start_url: `/`,
       background_color: `#ffffff`,
       // This will impact how browsers show your PWA/website

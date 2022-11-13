@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "blog-leonardo",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Leonardo Montini's personal website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Leonardo Montini",
   "dependencies": {
     "@fontsource/merriweather": "^4.5.14",
     "@fontsource/montserrat": "^4.5.13",
@@ -35,14 +32,14 @@
     "prettier": "^2.7.1",
     "typescript": "^4.8.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/Balastrong/blog",
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/Balastrong/blog"
   },
   "scripts": {
     "build": "gatsby build",
