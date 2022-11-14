@@ -15,7 +15,7 @@ export function Layout({
   return (
     <div className="Layout">
       <Header section={section} />
-      <main>{children}</main>
+      <main className="Layout_main">{children}</main>
       <Footer />
     </div>
   );

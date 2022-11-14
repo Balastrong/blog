@@ -4,6 +4,8 @@
   width: 100%;
   font-size: 1.6rem;
   margin-top: style.$space6;
+  background-color: style.$secondary;
+  color: style.$textPrimary;
 
   text-align: center;
 
@@ -14,7 +16,7 @@
   &_buttons {
     display: flex;
     justify-content: center;
-    gap: style.$space6;
+    gap: style.$space2;
     align-items: center;
 
     a {

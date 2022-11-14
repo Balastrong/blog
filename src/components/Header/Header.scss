@@ -8,9 +8,17 @@ $gap: style.$space2;
   top: 0;
   justify-content: space-between;
   align-items: center;
-  padding: style.$space4 0;
-  background-color: white;
+  padding: style.$space2 0;
+  background-color: style.$secondary;
   z-index: 1;
+  border-bottom: 1px solid style.$primary;
+
+  &_container {
+    display: flex;
+    max-width: style.$siteWidth;
+    margin: 0 auto;
+    width: 100%;
+  }
 
   &_left {
     display: flex;
@@ -29,6 +37,7 @@ $gap: style.$space2;
   &_nav {
     display: flex;
     gap: $gap;
+    font-size: 1.2rem;
   }
 
   &_right {
@@ -40,7 +49,15 @@ $gap: style.$space2;
 }
 
 .NavLink {
+  height: 100%;
+  text-decoration: none;
+
+  &:hover {
+    color: style.$primary;
+  }
+
   &___active {
-    color: red;
+    color: style.$primary;
+    border-bottom: 2px solid style.$primary;
   }
 }

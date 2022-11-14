@@ -20,6 +20,7 @@ export function Footer() {
               twitter
               youtube
               devto
+              linkedin
             }
           }
         }

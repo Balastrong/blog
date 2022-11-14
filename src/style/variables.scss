@@ -1,5 +1,12 @@
-$_baseSpace: 0.4rem;
+$primary: #3c91e6;
+$secondary: #eed7bf;
 
+$textPrimary: #0d0838;
+
+/* Sizes */
+$siteWidth: 960px;
+
+$_baseSpace: 0.4rem;
 $space1: $_baseSpace;
 $space2: $_baseSpace * 2;
 $space3: $_baseSpace * 3;
@@ -62,8 +69,6 @@ $space6: $_baseSpace * 6;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --color-primary: #005b99;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
