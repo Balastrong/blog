@@ -11,6 +11,7 @@ export type SiteMetadata = {
     twitterHandle: string;
     youtube: string;
     devto: string;
+    linkedin: string;
   };
 };
 

@@ -1,9 +1,9 @@
+import { Footer, Header } from "components";
 import * as React from "react";
-import { Header } from "components/Header";
 import { Section } from "types/gatsby";
 import "./Layout.scss";
 
-const Layout = ({
+export function Layout({
   section,
   title,
   children,
@@ -11,18 +11,12 @@ const Layout = ({
   section?: Section;
   title: string;
   children: React.ReactNode;
-}) => {
+}) {
   return (
     <div className="Layout">
       <Header section={section} />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      <Footer />
     </div>
   );
-};
-
-export default Layout;
+}

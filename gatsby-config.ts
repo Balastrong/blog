@@ -20,6 +20,7 @@ export const siteMetadata: SiteMetadata = {
     twitterHandle: `balastrong`,
     youtube: "https://www.youtube.com/@DevLeonardo",
     devto: "https://dev.to/balastrong",
+    linkedin: "https://www.linkedin.com/in/leonardo-montini/",
   },
 };
 export const plugins: PluginRef[] = [

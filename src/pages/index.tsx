@@ -1,9 +1,7 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 
-import Bio from "../components/Bio";
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
+import { Bio, Layout, Seo } from "../components";
 
 const BlogIndex = ({ data, location }: any) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;

@@ -1,9 +1,6 @@
+import { Bio, Layout, Seo } from "components";
 import { graphql, Link } from "gatsby";
 import * as React from "react";
-
-import Bio from "components/Bio";
-import Layout from "components/Layout";
-import Seo from "components/Seo";
 import { Post, SiteMetadata } from "types/gatsby";
 import "./BlogPost.scss";
 

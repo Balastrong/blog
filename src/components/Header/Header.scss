@@ -4,9 +4,13 @@ $gap: style.$space2;
 
 .Header {
   display: flex;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   padding: style.$space4 0;
+  background-color: white;
+  z-index: 1;
 
   &_left {
     display: flex;
@@ -39,12 +43,4 @@ $gap: style.$space2;
   &___active {
     color: red;
   }
-}
-
-.SocialIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(46, 46, 46);
-  height: 50px;
 }

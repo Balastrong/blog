@@ -1,5 +1,4 @@
-import Layout from "components/Layout";
-import Seo from "components/Seo";
+import { Layout, Seo } from "components";
 import { graphql } from "gatsby";
 
 import React from "react";

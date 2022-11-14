@@ -1,16 +1,17 @@
-import { Section } from "types/gatsby";
+import { LinkIcon } from "components/LinkIcon";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import React from "react";
-import "./Header.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import { GrYoutube, GrTwitter } from "react-icons/gr";
-import { FaDev } from "react-icons/fa";
+import React from "react";
+import { FaDev, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import { GrTwitter, GrYoutube } from "react-icons/gr";
+import { Section } from "types/gatsby";
+import "./Header.scss";
 
-export const Header = ({ section }: { section: Section | undefined }) => {
+export function Header({ section }: { section: Section | undefined }) {
   const {
     site: {
       siteMetadata: {
-        social: { twitter, youtube, devto },
+        social: { twitter, youtube, devto, linkedin },
       },
     },
   } = useStaticQuery(
@@ -56,19 +57,22 @@ export const Header = ({ section }: { section: Section | undefined }) => {
         </nav>
       </div>
       <div className="Header_right">
-        <SocialIcon href={youtube}>
-          <GrYoutube size={35} style={{ color: "red" }} />
-        </SocialIcon>
-        <SocialIcon href={twitter}>
-          <GrTwitter size={35} style={{ color: "#1DA1F2" }} />
-        </SocialIcon>
-        <SocialIcon href={devto}>
+        <LinkIcon href={youtube}>
+          <FaYoutube size={35} style={{ color: "red" }} />
+        </LinkIcon>
+        <LinkIcon href={twitter}>
+          <FaTwitter size={35} style={{ color: "#1DA1F2" }} />
+        </LinkIcon>
+        <LinkIcon href={devto}>
           <FaDev size={35} style={{ color: "black" }} />
-        </SocialIcon>
+        </LinkIcon>
+        <LinkIcon href={linkedin}>
+          <FaLinkedin size={35} style={{ color: "#0A66C2" }} />
+        </LinkIcon>
       </div>
     </header>
   );
-};
+}
 
 const NavLink = ({
   to,
@@ -85,19 +89,5 @@ const NavLink = ({
         {children}
       </Link>
     </div>
-  );
-};
-
-const SocialIcon = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <a href={href} target="_blank" rel="nofollow" className="SocialIcon">
-      {children}
-    </a>
   );
 };

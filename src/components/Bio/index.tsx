@@ -10,7 +10,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "./Bio.scss";
 
-const Bio = () => {
+export function Bio() {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
@@ -37,7 +37,7 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "png"]}
-        src="../images/propic.jpg"
+        src="../../images/propic.jpg"
         width={50}
         height={50}
         quality={95}
@@ -54,6 +54,4 @@ const Bio = () => {
       )}
     </div>
   );
-};
-
-export default Bio;
+}
