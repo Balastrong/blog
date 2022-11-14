@@ -46,7 +46,8 @@ export const plugins: PluginRef[] = [
         {
           resolve: `gatsby-remark-images`,
           options: {
-            maxWidth: 630,
+            maxWidth: 690,
+            wrapperStyle: `margin: 1rem auto`,
           },
         },
         {
@@ -56,6 +57,7 @@ export const plugins: PluginRef[] = [
           },
         },
         `gatsby-remark-prismjs`,
+        `gatsby-remark-liquid-tags`,
       ],
     },
   },

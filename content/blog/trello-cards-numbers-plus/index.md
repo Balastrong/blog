@@ -5,7 +5,7 @@ date: "2022-06-06"
 
 We all love Trello, don't we?
 
-![Trello Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fwl4kiht99tqrpsxzxd9.png)
+![Trello Logo](./trello-logo.png)
 
 It's a powerful tool that allows us to create boards that are the core of our productivity, taking care of the organization, coordination and management of our business.
 
@@ -37,9 +37,9 @@ There are also Trello Powerups, but having more than one needs a premium account
 
 One of the most common way to get those handy Trello card numbers is with a simple Chrome extension. I'm clearly not the first one thinking about it, but I wanted to create one as an exercise and share it with you. It's obviously Open Source and the repo is on [GitHub](https://github.com/Balastrong/trello-card-numbers-plus). You can open an issue or a PR if you want!
 
-![Extension Settings](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sfcozrf3gh7ch9ho5uiv.png)
+![Extension Settings](./tcnp-settings.png)
 
-![Card with Number](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fqb2ba7h3mtl9i1t2rf7.png)
+![Card with Number](./tcnp-preview.png)
 
 You can install it from the [Chrome Store](https://chrome.google.com/webstore/detail/trello-card-numbers-plus/ncibjlmfhjcjnphnpphgphbflpdpliei).
 
@@ -48,7 +48,7 @@ You can install it from the [Chrome Store](https://chrome.google.com/webstore/de
 _Bonus content_:, I also like making YouTube videos and I though it was a cool idea to make a short clip (less than 1 minute) to showcase the little project.
 
 If you're curious and you still have 58 spare seconds:
-{% embed https://youtu.be/G-nZXr_Gs6o %}
+{% youtube G-nZXr_Gs6o %}
 
 ---
 
