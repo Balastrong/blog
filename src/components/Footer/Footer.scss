@@ -5,7 +5,6 @@
   font-size: 1.6rem;
   margin-top: style.$space6;
   background-color: style.$secondary;
-  color: style.$textPrimary;
 
   text-align: center;
 
@@ -20,7 +19,7 @@
     align-items: center;
 
     a {
-      background-color: black;
+      background-color: style.$textPrimary;
       color: white;
       height: 1.8em;
       width: 1.8em;
@@ -28,7 +27,7 @@
 
       &:hover {
         background-color: white;
-        color: black;
+        color: style.$textPrimary;
       }
     }
   }

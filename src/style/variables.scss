@@ -1,8 +1,8 @@
 $primary: #3c91e6;
 $secondary: #eed7bf;
 
-$textPrimary: #0d0838;
-
+$textPrimary: #22272d;
+$textPrimaryLight: #4f5969;
 /* Sizes */
 $siteWidth: 960px;
 
@@ -70,6 +70,8 @@ $space6: $_baseSpace * 6;
   --fontSize-7: 2.986rem;
   --color-primary: #005b99;
   --color-heading: #1a202c;
+  --color-text: #{$textPrimary};
+  --color-text-light: #{$textPrimaryLight};
   --color-heading-black: black;
   --color-accent: #d1dce5;
 }
