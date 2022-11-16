@@ -14,7 +14,7 @@ export const siteMetadata: SiteMetadata = {
     summary: `Web Developer, Open Source enthusiast and Content Creator.`,
   },
   description: `Leonardo Montini's official website`,
-  siteUrl: `https://charming-strudel-f0618b.netlify.app/`,
+  siteUrl: `https://leonardomontini.dev/`,
   social: {
     twitter: `https://twitter.com/balastrong`,
     twitterHandle: `balastrong`,

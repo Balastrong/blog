@@ -3,9 +3,8 @@ $secondary: #eed7bf;
 
 $textPrimary: #22272d;
 $textPrimaryLight: #4f5969;
-/* Sizes */
-$siteWidth: 960px;
 
+/* Sizes */
 $_baseSpace: 0.4rem;
 $space1: $_baseSpace;
 $space2: $_baseSpace * 2;
@@ -13,6 +12,9 @@ $space3: $_baseSpace * 3;
 $space4: $_baseSpace * 4;
 $space5: $_baseSpace * 5;
 $space6: $_baseSpace * 6;
+
+$siteWidth: 1080px;
+$sitePadding: $space4;
 
 /* CSS Custom Properties Definitions */
 

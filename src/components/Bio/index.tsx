@@ -5,12 +5,17 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
+import classNames from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "./Bio.scss";
 
-export function Bio() {
+export function Bio({
+  orientation = "horizontal",
+}: {
+  orientation?: "horizontal" | "vertical";
+}) {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
@@ -19,38 +24,37 @@ export function Bio() {
             name
             summary
           }
-          social {
-            twitter
-          }
         }
       }
     }
   `);
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author;
-  const social = data.site.siteMetadata?.social;
 
   return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "png"]}
-        src="../../images/propic.jpg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
+    <div
+      className={classNames("Bio", {
+        Bio___horizontal: orientation === "horizontal",
+        Bio___vertical: orientation === "vertical",
+      })}
+    >
+      <div className="Bio_image">
+        <StaticImage
+          className="Bio_avatar"
+          layout="fixed"
+          formats={["auto", "png"]}
+          src="../../images/propic.jpg"
+          width={50}
+          height={50}
+          quality={95}
+          alt="Profile picture"
+        />
+      </div>
       {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          {social?.twitter && (
-            <a href={social.twitter}>You should follow them on Twitter</a>
-          )}
-        </p>
+        <div className="Bio_content">
+          <strong>{author.name}</strong>
+          <p>{author?.summary || null}</p>
+        </div>
       )}
     </div>
   );

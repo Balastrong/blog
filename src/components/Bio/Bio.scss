@@ -1,15 +1,20 @@
-.bio {
+@use "style";
+
+.Bio {
   display: flex;
   margin-bottom: var(--spacing-16);
+
+  &___horizontal {
+    flex-direction: row;
+  }
+  &___vertical {
+    flex-direction: column;
+  }
 }
 
-.bio p {
-  margin-bottom: var(--spacing-0);
-}
-
-.bio-avatar {
-  margin-right: var(--spacing-4);
-  margin-bottom: var(--spacing-0);
+.Bio_avatar {
+  margin-right: style.$space2;
+  margin-bottom: style.$space2;
   min-width: 50px;
-  border-radius: 100%;
+  border-radius: 0.5rem;
 }

@@ -3,7 +3,7 @@
 .Layout {
   &_main {
     margin: 0 auto;
-    padding: style.$space2 0;
+    padding: 0 style.$sitePadding;
     max-width: style.$siteWidth;
   }
 }

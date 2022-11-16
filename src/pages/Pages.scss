@@ -1,0 +1,23 @@
+@use "style";
+
+.Index {
+  display: flex;
+  flex-direction: row;
+  gap: style.$space4;
+  max-width: style.$siteWidth;
+  padding: 0 style.$sitePadding;
+  margin: 0 auto;
+  width: 100%;
+
+  &_list {
+    ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &_bio {
+    margin-top: style.$space4;
+  }
+}
