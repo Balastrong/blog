@@ -19,8 +19,9 @@ export type Post = {
   id: string;
   frontmatter: {
     title: string;
-    description: string;
     date: string;
+    description?: string;
+    slug?: string;
   };
   fields: {
     slug: string;

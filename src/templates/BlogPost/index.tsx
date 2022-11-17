@@ -23,7 +23,7 @@ const BlogPostTemplate = ({
   return (
     <Layout section="blog" title={siteTitle}>
       <article
-        className="blog-post"
+        className="BlogPost"
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -36,7 +36,7 @@ const BlogPostTemplate = ({
           itemProp="articleBody"
         />
       </article>
-      <nav className="blog-post-nav">
+      <nav className="BlogPost_nav">
         <ul
           style={{
             display: `flex`,

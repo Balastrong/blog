@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
  */
 
-import { GatsbyNode } from "gatsby";
+import { GatsbyNode, Node } from "gatsby";
 import { Post } from "./src/@types/gatsby";
 
 const path = require(`path`);
@@ -77,13 +77,23 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
 
+    const slug = formatSlug(node, value);
+
     createNodeField({
-      name: `slug`,
       node,
-      value,
+      name: `slug`,
+      value: slug,
     });
   }
 };
+
+function formatSlug(node: Node, filePath: string) {
+  return (
+    (node.frontmatter as Post["frontmatter"]).slug ||
+    filePath.split("_")[1] ||
+    filePath
+  );
+}
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
   ({ actions }) => {

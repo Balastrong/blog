@@ -4,17 +4,17 @@
   display: flex;
   margin-bottom: var(--spacing-16);
 
+  &_avatar {
+    margin-right: style.$space2;
+    margin-bottom: style.$space2;
+    min-width: 50px;
+    border-radius: style.$borderRadius;
+  }
+
   &___horizontal {
     flex-direction: row;
   }
   &___vertical {
     flex-direction: column;
   }
-}
-
-.Bio_avatar {
-  margin-right: style.$space2;
-  margin-bottom: style.$space2;
-  min-width: 50px;
-  border-radius: 0.5rem;
 }
