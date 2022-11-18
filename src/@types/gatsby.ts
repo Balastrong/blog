@@ -22,6 +22,7 @@ export type Post = {
     date: string;
     description?: string;
     slug?: string;
+    tags?: string[];
   };
   fields: {
     slug: string;

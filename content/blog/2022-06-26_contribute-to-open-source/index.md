@@ -1,6 +1,9 @@
 ---
 title: How Contribute to Open Source can Change Your Life
 date: "2022-06-26"
+tags:
+  - opensource
+  - tutorial
 ---
 
 First of all, what is **Open Source**?

@@ -11,7 +11,8 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // Define the template for blog post
-const blogPost = path.resolve(`./src/templates/BlogPost/index.tsx`);
+const postTemplate = path.resolve(`./src/templates/BlogPost/index.tsx`);
+const tagTemplate = path.resolve(`./src/templates/Tag/index.tsx`);
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -21,7 +22,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const { createPage } = actions;
 
   // Get all markdown blog posts sorted by date
-  const result = await graphql<any>(`
+  const { errors, data } = await graphql<{
+    allMarkdownRemark: {
+      nodes: Post[];
+    };
+  }>(`
     {
       allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
         nodes {
@@ -29,26 +34,36 @@ export const createPages: GatsbyNode["createPages"] = async ({
           fields {
             slug
           }
+          frontmatter {
+            title
+            date
+            tags
+          }
+          excerpt(pruneLength: 200)
         }
       }
     }
   `);
 
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
-    );
+  if (errors) {
+    reporter.panicOnBuild(`There was an error loading your blog posts`, errors);
     return;
   }
 
-  const posts: Post[] = result.data.allMarkdownRemark.nodes;
+  if (!data) {
+    reporter.panicOnBuild(`There was no data returned from your blog posts`);
+    return;
+  }
+
+  const posts: Post[] = data.allMarkdownRemark.nodes;
+  const tagsMap: Map<string, Set<Post>> = new Map();
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
+    // Create blog post pages
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id;
       const nextPostId =
@@ -56,11 +71,33 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
       createPage({
         path: post.fields.slug,
-        component: blogPost,
+        component: postTemplate,
         context: {
           id: post.id,
           previousPostId,
           nextPostId,
+        },
+      });
+
+      post.frontmatter.tags?.forEach(tag => {
+        if (!tagsMap.has(tag)) {
+          tagsMap.set(tag, new Set());
+        }
+
+        tagsMap.get(tag)?.add(post);
+      });
+    });
+
+    console.log(tagsMap);
+
+    // Create tag pages
+    Array.from(tagsMap.entries()).forEach(([tag, posts]) => {
+      createPage({
+        path: `/tag/${tag}`,
+        component: tagTemplate,
+        context: {
+          tag,
+          posts: Array.from(posts),
         },
       });
     });

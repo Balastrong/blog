@@ -1,6 +1,11 @@
 ---
 title: Easily identify a Trello card
 date: "2022-06-06"
+tags:
+  - trello
+  - productivity
+  - chrome
+  - opensource
 ---
 
 We all love Trello, don't we?

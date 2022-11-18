@@ -1,5 +1,6 @@
 import { graphql, Link } from "gatsby";
 import * as React from "react";
+import { Post } from "types/gatsby";
 import { Bio, Layout, Seo } from "../components";
 import "./Pages.scss";
 
@@ -20,7 +21,7 @@ const BlogIndex = ({ data, location }: any) => {
       <div className="Index">
         <div className="Index_list">
           <ol>
-            {posts.map((post: any) => {
+            {posts.map((post: Post) => {
               const title = post.frontmatter.title || post.fields.slug;
 
               return (
@@ -36,7 +37,17 @@ const BlogIndex = ({ data, location }: any) => {
                           <span itemProp="headline">{title}</span>
                         </Link>
                       </h2>
-                      <small>{post.frontmatter.date}</small>
+                      <small>
+                        {post.frontmatter.date}{" "}
+                        {post.frontmatter.tags && (
+                          <>
+                            &#183;{" "}
+                            {post.frontmatter.tags.map(tag => (
+                              <Link to={`/tag/${tag}`}>#{tag}</Link>
+                            ))}
+                          </>
+                        )}
+                      </small>
                     </header>
                     <section>
                       <p
@@ -86,6 +97,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }
