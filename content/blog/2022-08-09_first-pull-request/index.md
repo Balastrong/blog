@@ -2,7 +2,7 @@
 title: ⏰ How to create your First Pull Request on GitHub in less than 60 seconds!
 date: "2022-08-09"
 tags:
-  - opensource
+  - open-source
   - github
   - tutorial
   - pullrequest

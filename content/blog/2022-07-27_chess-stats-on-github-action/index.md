@@ -2,7 +2,7 @@
 title: Update your GitHub profile with your chess.com games with a GitHub Action
 date: "2022-07-27"
 tags:
-  - opensource
+  - open-source
   - github
   - chess
 ---

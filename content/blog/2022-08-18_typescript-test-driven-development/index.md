@@ -2,7 +2,7 @@
 title: Weighted 🏋️ Random generator in Typescript (with Test Driven Development 🧪)
 date: "2022-08-18"
 tags:
-  - opensource
+  - open-source
   - typescript
   - tutorial
   - tdd

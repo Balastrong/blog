@@ -5,7 +5,7 @@ tags:
   - trello
   - productivity
   - chrome
-  - opensource
+  - open-source
 ---
 
 We all love Trello, don't we?
@@ -53,6 +53,7 @@ You can install it from the [Chrome Store](https://chrome.google.com/webstore/de
 _Bonus content_:, I also like making YouTube videos and I though it was a cool idea to make a short clip (less than 1 minute) to showcase the little project.
 
 If you're curious and you still have 58 spare seconds:
+
 {% youtube G-nZXr_Gs6o %}
 
 ---

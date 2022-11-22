@@ -2,7 +2,7 @@
 title: ♻️ Delete unused node_modules in a second and enjoy some free space!
 date: "2022-08-05"
 tags:
-  - opensource
+  - open-source
   - npm
 ---
 

@@ -2,7 +2,7 @@
 title: How to find 🔎 an Open Source project to contribute to
 date: "2022-08-23"
 tags:
-  - opensource
+  - open-source
   - github
   - tutorial
 ---

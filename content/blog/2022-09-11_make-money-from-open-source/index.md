@@ -2,7 +2,7 @@
 title: 💰 Get paid while contributing to Open Source
 date: "2022-09-11"
 tags:
-  - opensource
+  - open-source
   - github
   - career
   - tutorial

@@ -2,7 +2,7 @@
 title: ⚙ This new GIT push config will save you lot of frustration!
 date: "2022-08-02"
 tags:
-  - opensource
+  - open-source
   - git
 ---
 
