@@ -1,36 +1,22 @@
-import { graphql, Link } from "gatsby";
+import { Bio, Layout, PostPreviewList, Seo } from "components";
+import { graphql } from "gatsby";
 import * as React from "react";
 import { Post } from "types/gatsby";
-import {
-  Bio,
-  Layout,
-  PostPreview,
-  PostPreviewList,
-  Seo,
-  Tag,
-  TagList,
-} from "components";
 import "./Pages.scss";
 
 const BlogIndex = ({ data, location }: any) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts: Post[] = data.allMarkdownRemark.nodes;
 
-  if (posts.length === 0) {
-    return (
-      <Layout section="blog" title="Blog Leonardo">
-        <Bio orientation="horizontal" />
-      </Layout>
-    );
-  }
-
   return (
     <Layout section="blog" title={siteTitle}>
       <div className="Index">
-        <PostPreviewList posts={posts} />
-        <div className="Index_bio">
-          <Bio orientation="vertical" />
-        </div>
+        <main className="Index_main">
+          <PostPreviewList posts={posts} />
+          <div className="Index_bio">
+            <Bio />
+          </div>
+        </main>
       </div>
     </Layout>
   );

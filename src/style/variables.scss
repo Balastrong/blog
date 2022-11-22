@@ -5,6 +5,11 @@ $textColor: #22272d;
 $textColorLight: #4f5969;
 $linkColor: #005b99;
 
+/* Media queries */
+$break-small: 480px;
+$break-medium: 768px;
+$break-large: 1024px;
+
 /* Sizes */
 $_baseSpace: 0.4rem;
 $space1: $_baseSpace;

@@ -2,19 +2,16 @@
 
 .Bio {
   display: flex;
-  margin-bottom: var(--spacing-16);
+  flex-direction: column;
+
+  @media (max-width: style.$break-medium) {
+    flex-direction: row;
+  }
 
   &_avatar {
     margin-right: style.$space2;
     margin-bottom: style.$space2;
     min-width: 50px;
     border-radius: style.$borderRadius;
-  }
-
-  &___horizontal {
-    flex-direction: row;
-  }
-  &___vertical {
-    flex-direction: column;
   }
 }

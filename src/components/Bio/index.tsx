@@ -11,11 +11,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "./Bio.scss";
 
-export function Bio({
-  orientation = "horizontal",
-}: {
-  orientation?: "horizontal" | "vertical";
-}) {
+export function Bio() {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
@@ -32,12 +28,7 @@ export function Bio({
   const author = data.site.siteMetadata?.author;
 
   return (
-    <div
-      className={classNames("Bio", {
-        Bio___horizontal: orientation === "horizontal",
-        Bio___vertical: orientation === "vertical",
-      })}
-    >
+    <div className="Bio">
       <div className="Bio_image">
         <StaticImage
           className="Bio_avatar"

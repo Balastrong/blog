@@ -60,16 +60,16 @@ export function Header({ section }: { section: Section | undefined }) {
         </div>
         <div className="Header_right">
           <LinkIcon href={youtube}>
-            <FaYoutube size={35} style={{ color: "red" }} />
+            <FaYoutube style={{ color: "red" }} />
           </LinkIcon>
           <LinkIcon href={twitter}>
-            <FaTwitter size={35} style={{ color: "#1DA1F2" }} />
+            <FaTwitter style={{ color: "#1DA1F2" }} />
           </LinkIcon>
           <LinkIcon href={devto}>
-            <FaDev size={35} style={{ color: "black" }} />
+            <FaDev style={{ color: "black" }} />
           </LinkIcon>
           <LinkIcon href={linkedin}>
-            <FaLinkedin size={35} style={{ color: "#0A66C2" }} />
+            <FaLinkedin style={{ color: "#0A66C2" }} />
           </LinkIcon>
         </div>
       </div>

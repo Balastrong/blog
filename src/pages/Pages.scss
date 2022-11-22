@@ -9,6 +9,17 @@
   margin: 0 auto;
   width: 100%;
 
+  &_main {
+    display: flex;
+    flex-direction: row;
+    gap: style.$space4;
+
+    @media (max-width: style.$break-medium) {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+  }
+
   &_bio {
     margin-top: style.$space4;
   }

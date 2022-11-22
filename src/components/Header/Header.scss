@@ -33,6 +33,10 @@ $gap: style.$space2;
     img {
       border-radius: style.$borderRadius;
     }
+
+    @media (max-width: style.$break-medium) {
+      display: none;
+    }
   }
 
   &_nav {
@@ -45,7 +49,11 @@ $gap: style.$space2;
     display: flex;
     align-items: center;
     gap: $gap;
-    font-size: 2.5rem;
+    font-size: 2rem;
+
+    @media (max-width: style.$break-small) {
+      font-size: 1.5rem;
+    }
   }
 }
 
