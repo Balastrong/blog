@@ -1,6 +1,10 @@
 ---
 title: Update your GitHub profile with your chess.com games with a GitHub Action
 date: "2022-07-27"
+tags:
+  - opensource
+  - github
+  - chess
 ---
 
 When navigating through GitHub you may land on awesome profiles with "live" content being updated automatically, what kind of sorcery is this?

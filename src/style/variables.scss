@@ -1,8 +1,9 @@
 $primary: #3c91e6;
 $secondary: #eed7bf;
 
-$textPrimary: #22272d;
-$textPrimaryLight: #4f5969;
+$textColor: #22272d;
+$textColorLight: #4f5969;
+$linkColor: #005b99;
 
 /* Sizes */
 $_baseSpace: 0.4rem;
@@ -72,10 +73,10 @@ $borderRadius: 0.5rem;
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  --color-link: #{$linkColor};
   --color-heading: #1a202c;
-  --color-text: #{$textPrimary};
-  --color-text-light: #{$textPrimaryLight};
+  --color-text: #{$textColor};
+  --color-text-light: #{$textColorLight};
   --color-heading-black: black;
   --color-accent: #d1dce5;
 }

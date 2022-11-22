@@ -1,6 +1,9 @@
 ---
 title: ⚙ This new GIT push config will save you lot of frustration!
 date: "2022-08-02"
+tags:
+  - opensource
+  - git
 ---
 
 If you have 59 seconds and in particular you're also on mobile, you might enjoy watching the YouTube #Shorts video.

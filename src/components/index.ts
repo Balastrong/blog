@@ -1,6 +1,10 @@
 export { Bio } from "./Bio";
-export { Layout } from "./Layout";
-export { Seo } from "./Seo";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
+export { Layout } from "./Layout";
 export { LinkIcon } from "./LinkIcon";
+export { PostPreview } from "./PostPreview";
+export { PostPreviewList } from "./PostPreviewList";
+export { Seo } from "./Seo";
+export { Tag } from "./Tag";
+export { TagList } from "./TagList";

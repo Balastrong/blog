@@ -1,0 +1,25 @@
+@use "style";
+
+.PostPreview {
+  margin-bottom: style.$space5;
+  margin-top: style.$space5;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  header {
+    margin-bottom: style.$space1;
+  }
+
+  &_title {
+    margin-bottom: style.$space1;
+    margin-top: 0;
+  }
+
+  &_meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: style.$space1;
+  }
+}

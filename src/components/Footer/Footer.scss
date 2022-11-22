@@ -19,7 +19,7 @@
     align-items: center;
 
     a {
-      background-color: style.$textPrimary;
+      background-color: style.$textColor;
       color: white;
       height: 1.8em;
       width: 1.8em;
@@ -27,7 +27,7 @@
 
       &:hover {
         background-color: white;
-        color: style.$textPrimary;
+        color: style.$textColor;
       }
     }
   }

@@ -1,6 +1,11 @@
 ---
 title: Open Source is not only writing code 🙅‍♂️🧑‍💻
 date: "2022-08-31"
+tags:
+  - opensource
+  - github
+  - career
+  - tutorial
 ---
 
 _You can find a [video version](https://youtu.be/NEzYE1-37SA) of this article on my [YouTube channel](https://www.youtube.com/channel/UC-KqnO3ez7vF-kyIQ_22rdA)._

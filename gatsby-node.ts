@@ -28,7 +28,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     };
   }>(`
     {
-      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         nodes {
           id
           fields {
@@ -36,7 +36,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
           }
           frontmatter {
             title
-            date
+            date(formatString: "MMMM DD, YYYY")
             tags
           }
           excerpt(pruneLength: 200)
@@ -87,8 +87,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
         tagsMap.get(tag)?.add(post);
       });
     });
-
-    console.log(tagsMap);
 
     // Create tag pages
     Array.from(tagsMap.entries()).forEach(([tag, posts]) => {

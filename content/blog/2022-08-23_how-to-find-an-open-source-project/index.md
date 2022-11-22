@@ -1,6 +1,10 @@
 ---
 title: How to find 🔎 an Open Source project to contribute to
 date: "2022-08-23"
+tags:
+  - opensource
+  - github
+  - tutorial
 ---
 
 _You can find a [video version](https://youtu.be/yfopPq4354o) of this article on my [YouTube Channel](https://www.youtube.com/channel/UC-KqnO3ez7vF-kyIQ_22rdA)._

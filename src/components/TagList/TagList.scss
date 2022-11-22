@@ -1,0 +1,13 @@
+@use "style";
+
+.TagList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  list-style: none;
+  gap: style.$space1;
+
+  &_item {
+    margin: 0;
+  }
+}

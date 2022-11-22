@@ -1,6 +1,11 @@
 ---
 title: 💰 Get paid while contributing to Open Source
 date: "2022-09-11"
+tags:
+  - opensource
+  - github
+  - career
+  - tutorial
 ---
 
 What if I tell you that you get paid in real money - with Open Source?
