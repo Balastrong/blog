@@ -12,11 +12,6 @@
     margin-bottom: style.$space1;
   }
 
-  &_author {
-    text-align: center;
-    margin-bottom: style.$space1;
-  }
-
   &_avatar {
     margin: style.$space2 auto;
     min-width: 50px;
@@ -25,6 +20,21 @@
     @include style.medium {
       margin: 0;
       margin-right: style.$space2;
+    }
+  }
+
+  &_author {
+    text-align: center;
+    margin-bottom: style.$space1;
+
+    @include style.medium {
+      text-align: left;
+    }
+  }
+
+  &_extended {
+    @include style.medium {
+      display: none;
     }
   }
 }

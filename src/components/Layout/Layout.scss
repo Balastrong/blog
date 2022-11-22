@@ -5,5 +5,9 @@
     margin: 0 auto;
     padding: 0 style.$sitePadding;
     max-width: style.$siteWidth;
+
+    @include style.small {
+      padding: 0 style.$sitePaddingSmall;
+    }
   }
 }

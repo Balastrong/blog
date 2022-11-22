@@ -49,20 +49,22 @@ export function Bio() {
             <strong>{author.name}</strong>
           </div>
           <p>{author?.summary || null}</p>
-          <p>
-            Learn by doing, in public. The outcome is{" "}
-            {social?.youtube ? (
-              <a href={social?.youtube} target="_blank">
-                YouTube videos
-              </a>
-            ) : (
-              "YouTube videos"
-            )}{" "}
-            and articles for my blog.
-          </p>
-          <p>
-            Cats <strong>&gt;</strong> Dogs, that's the truth.
-          </p>
+          <span className="Bio_extended">
+            <p>
+              Learn by doing, in public. The outcome is{" "}
+              {social?.youtube ? (
+                <a href={social?.youtube} target="_blank">
+                  YouTube videos
+                </a>
+              ) : (
+                "YouTube videos"
+              )}{" "}
+              and articles for my blog.
+            </p>
+            <p>
+              Cats <strong>&gt;</strong> Dogs, that's the truth.
+            </p>
+          </span>
         </div>
       )}
     </div>
