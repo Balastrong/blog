@@ -12,7 +12,9 @@ const BlogIndex = ({ data, location }: any) => {
     <Layout section="blog" title={siteTitle}>
       <div className="Index">
         <main className="Index_main">
-          <PostPreviewList posts={posts} />
+          <div className="Index_postPreview">
+            <PostPreviewList posts={posts} />
+          </div>
           <div className="Index_bio">
             <Bio />
           </div>

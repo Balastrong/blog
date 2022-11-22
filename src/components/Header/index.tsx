@@ -43,6 +43,7 @@ export function Header({ section }: { section: Section | undefined }) {
                 layout="fixed"
                 width={50}
                 height={50}
+                quality={100}
               />
             </Link>
           </div>

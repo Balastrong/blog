@@ -1,0 +1,19 @@
+@use "style/variables.scss" as style;
+
+@mixin small {
+  @media (max-width: style.$break-small) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: style.$break-medium) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (max-width: style.$break-large) {
+    @content;
+  }
+}

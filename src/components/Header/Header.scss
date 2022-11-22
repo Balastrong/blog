@@ -1,6 +1,7 @@
 @use "style";
 
 $gap: style.$space2;
+$gapSmall: style.$space1;
 
 .Header {
   display: flex;
@@ -8,10 +9,14 @@ $gap: style.$space2;
   top: 0;
   justify-content: space-between;
   align-items: center;
-  padding: style.$space2 0;
+  padding: $gap 0;
   background-color: style.$secondary;
   z-index: 1;
   border-bottom: 1px solid style.$primary;
+
+  @include style.small {
+    padding: $gapSmall 0;
+  }
 
   &_container {
     display: flex;
@@ -34,7 +39,7 @@ $gap: style.$space2;
       border-radius: style.$borderRadius;
     }
 
-    @media (max-width: style.$break-medium) {
+    @include style.medium {
       display: none;
     }
   }
@@ -43,6 +48,10 @@ $gap: style.$space2;
     display: flex;
     gap: $gap;
     font-size: 1.2rem;
+
+    @include style.small {
+      font-size: 1rem;
+    }
   }
 
   &_right {
@@ -51,8 +60,9 @@ $gap: style.$space2;
     gap: $gap;
     font-size: 2rem;
 
-    @media (max-width: style.$break-small) {
-      font-size: 1.5rem;
+    @include style.small {
+      font-size: 1.7rem;
+      gap: $gapSmall;
     }
   }
 }

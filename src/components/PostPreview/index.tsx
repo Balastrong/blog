@@ -11,7 +11,7 @@ export function PostPreview({ post }: { post: Post }) {
     <article className="PostPreview">
       <header>
         <h3 className="PostPreview_title">
-          <Link to={post.fields.slug}>{title}</Link>
+          <Link to={`/${post.fields.slug}`}>{title}</Link>
         </h3>
         <small className="PostPreview_meta">
           {post.frontmatter.date}

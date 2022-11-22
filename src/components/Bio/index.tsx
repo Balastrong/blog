@@ -5,7 +5,6 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import classNames from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
@@ -20,12 +19,15 @@ export function Bio() {
             name
             summary
           }
+          social {
+            youtube
+          }
         }
       }
     }
   `);
 
-  const author = data.site.siteMetadata?.author;
+  const { author, social } = data.site.siteMetadata;
 
   return (
     <div className="Bio">
@@ -35,16 +37,32 @@ export function Bio() {
           layout="fixed"
           formats={["auto", "png"]}
           src="../../images/propic.jpg"
-          width={50}
-          height={50}
-          quality={95}
+          width={80}
+          height={80}
+          quality={100}
           alt="Profile picture"
         />
       </div>
       {author?.name && (
         <div className="Bio_content">
-          <strong>{author.name}</strong>
+          <div className="Bio_author">
+            <strong>{author.name}</strong>
+          </div>
           <p>{author?.summary || null}</p>
+          <p>
+            Learn by doing, in public. The outcome is{" "}
+            {social?.youtube ? (
+              <a href={social?.youtube} target="_blank">
+                YouTube videos
+              </a>
+            ) : (
+              "YouTube videos"
+            )}{" "}
+            and articles for my blog.
+          </p>
+          <p>
+            Cats <strong>&gt;</strong> Dogs, that's the truth.
+          </p>
         </div>
       )}
     </div>
