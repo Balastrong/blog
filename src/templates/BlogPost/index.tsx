@@ -3,10 +3,10 @@ import { graphql, Link } from "gatsby";
 import * as React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
 import "./BlogPost.scss";
+import { DiscussionEmbed } from "disqus-react";
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
-  location,
 }: {
   data: {
     previous: Post;
@@ -16,9 +16,12 @@ const BlogPostTemplate = ({
     };
     markdownRemark: Post;
   };
-  location: string;
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`;
+  const disqusConfig = {
+    shortname: "leonardomontini",
+    config: { identifier: post.fields.slug, title: post.frontmatter.title },
+  };
 
   return (
     <Layout section="blog" title={siteTitle}>
@@ -35,6 +38,9 @@ const BlogPostTemplate = ({
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        <section>
+          <DiscussionEmbed {...disqusConfig} />
+        </section>
       </article>
       <nav className="BlogPost_nav">
         <ul
@@ -102,6 +108,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        slug
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
