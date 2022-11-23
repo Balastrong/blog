@@ -1,45 +1,28 @@
 import { Layout, Seo } from "components";
-import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
-import React from "react";
+import React, { useEffect } from "react";
+import { siteMetadata } from "../../gatsby-config";
 
 const YouTube = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.location.href = siteMetadata.social.youtube;
+    }, 2000);
+  }, []);
+
   return (
     <Layout section="youtube" title="YouTube">
-      <h1>YouTube</h1>
-      <p>Coming soon...</p>
+      <StaticImage
+        src="../images/youtube-meme.png"
+        alt="YouTube"
+        placeholder="blurred"
+        layout="fullWidth"
+      />
     </Layout>
   );
 };
 
 export default YouTube;
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
 export const Head = () => <Seo title="YouTube" />;
-
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
-      }
-    }
-  }
-`;
