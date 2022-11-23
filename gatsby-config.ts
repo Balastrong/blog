@@ -129,4 +129,5 @@ export const plugins: PluginRef[] = [
   },
   "gatsby-plugin-sass",
   "gatsby-plugin-sitemap",
+  "gatsby-plugin-offline",
 ];
