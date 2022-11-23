@@ -13,6 +13,9 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 // Define the template for blog post
 const postTemplate = path.resolve(`./src/templates/BlogPost/index.tsx`);
 const tagTemplate = path.resolve(`./src/templates/Tag/index.tsx`);
+const paginatedIndexTemplate = path.resolve(
+  "./src/templates/PaginatedIndex/index.tsx"
+);
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -58,11 +61,23 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const posts: Post[] = data.allMarkdownRemark.nodes;
   const tagsMap: Map<string, Set<Post>> = new Map();
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
-
   if (posts.length > 0) {
+    // Create paginated index pages
+    const postsPerPage = 8;
+    const numPages = Math.ceil(posts.length / postsPerPage);
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/` : `/page/${i + 1}`,
+        component: paginatedIndexTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i,
+        },
+      });
+    });
+
     // Create blog post pages
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id;

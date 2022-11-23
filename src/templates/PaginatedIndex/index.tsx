@@ -1,21 +1,28 @@
-import { Bio, Layout, PostPreviewList, Seo } from "components";
+import { PostPreviewList, Bio, Layout, Seo, Paginator } from "components";
 import { graphql } from "gatsby";
-import * as React from "react";
-import { Post } from "types/gatsby";
-import "./Pages.scss";
+import React from "react";
+import { PaginatedIndexContext, Post } from "types/gatsby";
+import "./PaginatedIndex.scss";
 
-const BlogIndex = ({ data, location }: any) => {
+const PaginatedPosts = ({
+  data,
+  pageContext,
+}: {
+  data: any;
+  pageContext: PaginatedIndexContext;
+}) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts: Post[] = data.allMarkdownRemark.nodes;
 
   return (
     <Layout section="blog" title={siteTitle}>
-      <div className="Index">
-        <main className="Index_main">
-          <div className="Index_postPreview">
+      <div className="PaginatedIndex">
+        <main className="PaginatedIndex_main">
+          <div className="PaginatedIndex_postPreview">
             <PostPreviewList posts={posts} />
+            <Paginator context={pageContext} />
           </div>
-          <div className="Index_bio">
+          <div className="PaginatedIndex_bio">
             <Bio />
           </div>
         </main>
@@ -24,7 +31,7 @@ const BlogIndex = ({ data, location }: any) => {
   );
 };
 
-export default BlogIndex;
+export default PaginatedPosts;
 
 /**
  * Head export to define metadata for the page
@@ -34,13 +41,17 @@ export default BlogIndex;
 export const Head = () => <Seo title="Blog Leonardo" />;
 
 export const pageQuery = graphql`
-  {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      sort: { frontmatter: { date: DESC } }
+      limit: $limit
+      skip: $skip
+    ) {
       nodes {
         excerpt
         fields {

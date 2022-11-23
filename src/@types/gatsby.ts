@@ -32,3 +32,10 @@ export type Post = {
 };
 
 export type Section = "blog" | "youtube" | "about";
+
+export type PaginatedIndexContext = {
+  currentPage: number;
+  numPages: number;
+  limit: number;
+  skip: number;
+};

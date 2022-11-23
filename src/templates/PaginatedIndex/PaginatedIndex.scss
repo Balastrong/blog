@@ -1,8 +1,8 @@
 @use "style";
 
-.Index {
+.PaginatedIndex {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: style.$space4;
   max-width: style.$siteWidth;
   margin: 0 auto;
