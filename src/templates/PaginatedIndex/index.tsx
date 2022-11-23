@@ -27,6 +27,10 @@ const PaginatedPosts = ({
           </div>
         </main>
       </div>
+      {pageContext.currentPage === 0 && (
+        /* Backlink to verify on Mastodon */
+        <a rel="me" href="https://fosstodon.org/@balastrong"></a>
+      )}
     </Layout>
   );
 };
