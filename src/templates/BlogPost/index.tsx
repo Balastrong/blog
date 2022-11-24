@@ -1,4 +1,4 @@
-import { Bio, Layout, Seo } from "components";
+import { Bio, Layout, PostMeta, Seo, TagList } from "components";
 import { graphql, Link } from "gatsby";
 import * as React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
@@ -30,9 +30,9 @@ const BlogPostTemplate = ({
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+        <header className="BlogPost_header">
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <PostMeta post={post} />
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -108,6 +108,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
       fields {
         slug

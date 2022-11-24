@@ -9,7 +9,6 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { GrTwitter, GrYoutube } from "react-icons/gr";
 import { Section } from "types/gatsby";
 import "./Header.scss";
 

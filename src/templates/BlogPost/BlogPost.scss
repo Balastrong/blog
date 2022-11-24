@@ -1,9 +1,19 @@
 @use "style";
 
 .BlogPost {
+  display: flex;
+  gap: style.$space2;
+  flex-direction: column;
+
+  &_header {
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
   &_nav {
     ul {
-      margin: var(--spacing-0);
+      margin: 0;
     }
   }
 }

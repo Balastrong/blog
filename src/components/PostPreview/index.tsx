@@ -1,4 +1,4 @@
-import { TagList } from "components/TagList";
+import { PostMeta } from "components";
 import { Link } from "gatsby";
 import React from "react";
 import { Post } from "types/gatsby";
@@ -13,15 +13,7 @@ export function PostPreview({ post }: { post: Post }) {
         <h3 className="PostPreview_title">
           <Link to={`/${post.fields.slug}`}>{title}</Link>
         </h3>
-        <small className="PostPreview_meta">
-          {post.frontmatter.date}
-          {post.frontmatter.tags && (
-            <>
-              <span>&#183;</span>
-              <TagList tags={post.frontmatter.tags} />
-            </>
-          )}
-        </small>
+        <PostMeta post={post} />
       </header>
       <section>
         <p

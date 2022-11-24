@@ -1,0 +1,7 @@
+@use "style";
+
+.PostMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: style.$space1;
+}

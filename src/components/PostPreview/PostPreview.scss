@@ -13,13 +13,6 @@
   }
 
   &_title {
-    margin-bottom: style.$space1;
-    margin-top: 0;
-  }
-
-  &_meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: style.$space1;
+    margin: 0;
   }
 }

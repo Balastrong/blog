@@ -4,6 +4,7 @@ export { Header } from "./Header";
 export { Layout } from "./Layout";
 export { LinkIcon } from "./LinkIcon";
 export { Paginator } from "./Paginator";
+export { PostMeta } from "./PostMeta";
 export { PostPreview } from "./PostPreview";
 export { PostPreviewList } from "./PostPreviewList";
 export { Seo } from "./Seo";
