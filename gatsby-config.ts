@@ -13,7 +13,7 @@ export const siteMetadata: SiteMetadata = {
     name: `Leonardo Montini`,
     summary: `Web Developer, Open Source enthusiast and Content Creator.`,
   },
-  description: `Leonardo Montini's official website`,
+  description: `I'm Leonardo Montini's and I talk about Open Source and Web Development. You can find on my website all my articles and YouTube videos.`,
   siteUrl: `https://leonardomontini.dev/`,
   social: {
     twitter: `https://twitter.com/balastrong`,
@@ -21,6 +21,7 @@ export const siteMetadata: SiteMetadata = {
     youtube: "https://www.youtube.com/@DevLeonardo",
     devto: "https://dev.to/balastrong",
     linkedin: "https://www.linkedin.com/in/leonardo-montini/",
+    discord: "https://discord.gg/Gtzcg4sggn",
   },
 };
 export const plugins: PluginRef[] = [

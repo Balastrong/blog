@@ -2,7 +2,13 @@ import { LinkIcon } from "components/LinkIcon";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { FaDev, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaDev,
+  FaDiscord,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { GrTwitter, GrYoutube } from "react-icons/gr";
 import { Section } from "types/gatsby";
 import "./Header.scss";
@@ -11,7 +17,7 @@ export function Header({ section }: { section: Section | undefined }) {
   const {
     site: {
       siteMetadata: {
-        social: { twitter, youtube, devto, linkedin },
+        social: { twitter, youtube, devto, linkedin, discord },
       },
     },
   } = useStaticQuery(
@@ -24,6 +30,7 @@ export function Header({ section }: { section: Section | undefined }) {
               youtube
               devto
               linkedin
+              discord
             }
           }
         }
@@ -71,6 +78,9 @@ export function Header({ section }: { section: Section | undefined }) {
           </LinkIcon>
           <LinkIcon href={linkedin}>
             <FaLinkedin style={{ color: "#0A66C2" }} />
+          </LinkIcon>
+          <LinkIcon href={discord}>
+            <FaDiscord style={{ color: "#7289DA" }} />
           </LinkIcon>
         </div>
       </div>

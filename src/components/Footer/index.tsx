@@ -1,14 +1,20 @@
 import { LinkIcon } from "components/LinkIcon";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import { FaDev, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaDev,
+  FaDiscord,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import "./Footer.scss";
 
 export function Footer() {
   const {
     site: {
       siteMetadata: {
-        social: { twitter, youtube, devto, linkedin },
+        social: { twitter, youtube, devto, linkedin, discord },
       },
     },
   } = useStaticQuery(
@@ -21,6 +27,7 @@ export function Footer() {
               youtube
               devto
               linkedin
+              discord
             }
           }
         }
@@ -45,6 +52,9 @@ export function Footer() {
         </LinkIcon>
         <LinkIcon href={linkedin}>
           <FaLinkedin />
+        </LinkIcon>
+        <LinkIcon href={discord}>
+          <FaDiscord />
         </LinkIcon>
       </div>
     </footer>

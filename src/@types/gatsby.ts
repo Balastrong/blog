@@ -12,6 +12,7 @@ export type SiteMetadata = {
     youtube: string;
     devto: string;
     linkedin: string;
+    discord: string;
   };
 };
 
