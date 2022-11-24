@@ -5,6 +5,18 @@
   gap: style.$space2;
   flex-direction: column;
 
+  &_content {
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    iframe[src*="youtube"] {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   &_header {
     h1 {
       margin-bottom: 0;
