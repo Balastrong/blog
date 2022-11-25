@@ -44,7 +44,7 @@ export function Header({ section }: { section: Section | undefined }) {
           <div className="Header_logo">
             <Link to="/">
               <StaticImage
-                src="../../images/propic.jpg"
+                src="../../images/propic_blue.jpg"
                 alt="Logo"
                 layout="fixed"
                 width={50}

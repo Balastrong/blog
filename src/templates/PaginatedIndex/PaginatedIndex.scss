@@ -8,25 +8,11 @@
   margin: 0 auto;
   width: 100%;
 
-  &_main {
-    display: flex;
-    flex-direction: row;
-    gap: style.$space4;
-
-    @include style.medium {
-      flex-direction: column-reverse;
-      gap: 0;
-    }
-  }
-
   &_postPreview {
-    flex: 2;
     margin-top: style.$space4;
   }
 
-  &_bio {
-    margin-top: style.$space4;
-    flex: 1;
-    min-width: 250px;
+  .Bio {
+    margin-bottom: style.$space4;
   }
 }

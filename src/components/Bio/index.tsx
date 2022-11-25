@@ -36,37 +36,35 @@ export function Bio() {
           className="Bio_avatar"
           layout="fixed"
           formats={["auto", "png"]}
-          src="../../images/propic.jpg"
-          width={80}
-          height={80}
+          src="../../images/propic_white.jpg"
+          width={125}
+          height={125}
           quality={100}
           alt="Profile picture"
         />
       </div>
-      {author?.name && (
-        <div className="Bio_content">
-          <div className="Bio_author">
-            <strong>{author.name}</strong>
-          </div>
-          <p>{author?.summary || null}</p>
-          <span className="Bio_extended">
-            <p>
-              Learn by doing, in public. The outcome is{" "}
-              {social?.youtube ? (
-                <a href={social?.youtube} target="_blank">
-                  YouTube videos
-                </a>
-              ) : (
-                "YouTube videos"
-              )}{" "}
-              and articles for my blog.
-            </p>
-            <p>
-              Cats <strong>&gt;</strong> Dogs, that's the truth.
-            </p>
-          </span>
+      <div className="Bio_content">
+        <div className="Bio_author">
+          <strong>{author.name}</strong>
         </div>
-      )}
+        <p>{author?.summary || null}</p>
+        <span className="Bio_extended">
+          <p>
+            Learn by doing, in public. The outcome is{" "}
+            {social?.youtube ? (
+              <a href={social?.youtube} target="_blank">
+                YouTube videos
+              </a>
+            ) : (
+              "YouTube videos"
+            )}{" "}
+            and articles for my blog.
+          </p>
+          <p>
+            Cats <strong>&gt;</strong> Dogs, that's the truth.
+          </p>
+        </span>
+      </div>
     </div>
   );
 }
