@@ -6,8 +6,16 @@ import React from "react";
 const About = () => {
   return (
     <Layout section="about" title="About me">
-      <h1>About</h1>
-      <p>Coming soon...</p>
+      <h2>About</h2>
+      <p>This page is still... empty!</p>
+      <p>
+        Don't worry though, I've got great plans for it! You can follow the
+        process on{" "}
+        <a href="https://github.com/Balastrong/blog/issues/11" target="_blank">
+          GitHub
+        </a>{" "}
+        ;)
+      </p>
     </Layout>
   );
 };
