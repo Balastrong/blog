@@ -1,5 +1,6 @@
-/* HTML elements */
+@use "style/variables" as style;
 
+/* HTML elements */
 *,
 :after,
 :before {
@@ -17,6 +18,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background-color: style.$backgroundColor;
 }
 
 footer {

@@ -10,3 +10,4 @@ export { PostPreviewList } from "./PostPreviewList";
 export { Seo } from "./Seo";
 export { Tag } from "./Tag";
 export { TagList } from "./TagList";
+export { Card } from "./Card";
