@@ -1,0 +1,20 @@
+@use "style";
+
+.NavigatorButton {
+  display: flex;
+
+  &_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: style.$space2;
+
+    &___right {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &_arrow {
+    display: flex;
+  }
+}

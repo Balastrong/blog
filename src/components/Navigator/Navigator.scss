@@ -1,0 +1,32 @@
+@use "style";
+
+.Navigator {
+  &_list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: style.$space6;
+    gap: style.$space4;
+  }
+
+  &_item {
+    display: flex;
+    flex: 1;
+
+    &___left {
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    &___center {
+      text-align: center;
+      justify-content: center;
+    }
+
+    &___right {
+      text-align: right;
+      justify-content: flex-end;
+    }
+  }
+}

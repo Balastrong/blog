@@ -1,8 +1,11 @@
 export { Bio } from "./Bio";
+export { Card } from "./Card";
 export { Footer } from "./Footer";
 export { Header } from "./Header";
 export { Layout } from "./Layout";
 export { LinkIcon } from "./LinkIcon";
+export { Navigator } from "./Navigator";
+export { NavigatorButton } from "./NavigatorButton";
 export { Paginator } from "./Paginator";
 export { PostMeta } from "./PostMeta";
 export { PostPreview } from "./PostPreview";
@@ -10,4 +13,3 @@ export { PostPreviewList } from "./PostPreviewList";
 export { Seo } from "./Seo";
 export { Tag } from "./Tag";
 export { TagList } from "./TagList";
-export { Card } from "./Card";

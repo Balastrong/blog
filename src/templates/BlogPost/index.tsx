@@ -1,4 +1,4 @@
-import { Bio, Layout, PostMeta, Seo, TagList } from "components";
+import { Bio, Layout, Navigator, PostMeta, Seo, TagList } from "components";
 import { graphql, Link } from "gatsby";
 import * as React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
@@ -43,32 +43,27 @@ const BlogPostTemplate = ({
           <DiscussionEmbed {...disqusConfig} />
         </section>
       </article>
-      <nav className="BlogPost_nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={"/" + previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={"/" + next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      <footer className="BlogPost_footer">
+        <h3 style={{ marginTop: 0 }}>Read next</h3>
+        <Navigator
+          leftButton={
+            previous
+              ? {
+                  link: `/${previous.fields.slug}`,
+                  text: previous.frontmatter.title,
+                }
+              : undefined
+          }
+          rightButton={
+            next
+              ? {
+                  link: `/${next.fields.slug}`,
+                  text: next.frontmatter.title,
+                }
+              : undefined
+          }
+        />
+      </footer>
     </Layout>
   );
 };
