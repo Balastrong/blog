@@ -118,7 +118,7 @@ export const plugins: PluginRef[] = [
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: `Dev Leonardo's Blog`,
-      short_name: `Dev Leonardo's Blog`,
+      short_name: `Dev Leonardo`,
       start_url: `/`,
       background_color: `#ffffff`,
       // This will impact how browsers show your PWA/website
