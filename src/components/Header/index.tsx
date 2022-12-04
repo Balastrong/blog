@@ -98,7 +98,12 @@ const NavLink = ({
 }) => {
   return (
     <div>
-      <Link to={to} className={`NavLink ${active && "NavLink___active"}`}>
+      <Link
+        to={to}
+        className={`NavLink ${active && "NavLink___active"}`}
+        title={to}
+        aria-label={to}
+      >
         {children}
       </Link>
     </div>

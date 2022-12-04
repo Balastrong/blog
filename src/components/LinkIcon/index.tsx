@@ -9,7 +9,13 @@ export function LinkIcon({
   children: React.ReactNode;
 }) {
   return (
-    <a href={href} target="_blank" rel="nofollow" className="LinkIcon">
+    <a
+      href={href}
+      target="_blank"
+      rel="nofollow"
+      className="LinkIcon"
+      aria-label={href}
+    >
       {children}
     </a>
   );
