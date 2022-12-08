@@ -16,7 +16,9 @@ export function Paginator({
         currentPageDisplay > 1
           ? {
               link:
-                currentPageDisplay === 2 ? "/" : `/${currentPageDisplay - 1}`,
+                currentPageDisplay === 2
+                  ? "/"
+                  : `/page/${currentPageDisplay - 1}`,
               text: "Newer Posts",
             }
           : undefined
