@@ -1,5 +1,5 @@
 ---
-title: "Automated tests with GitHub Actions"
+title: "Running Automated Tests with GitHub Actions"
 date: "2023-01-03"
 tags:
   - github
