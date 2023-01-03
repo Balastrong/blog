@@ -9,13 +9,13 @@ tags:
 
 GitHub Actions can bring your project to life, for real!
 
-If you never used them, [this video tutorial](https://youtu.be/WW6ZUw9IExA) will help you to get started by showing the building blocks and the core concepts you need to know in order to run you own GitHub Action.
+If you never used them, [this video tutorial](https://youtu.be/WW6ZUw9IExA) will help you to get started by showing the building blocks and the core concepts you need to know in order to run your own GitHub Action.
 
 To put some more interesting content in, the goal will be running automated tests for a simple Node.js project.
 
 ## Building blocks
 
-This is how a basic GitHub Action looks like, with only the required fields:
+This is what a basic GitHub Action looks like, with only the required fields:
 
 ```yaml
 name: Hello World
