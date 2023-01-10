@@ -9,7 +9,7 @@ tags:
 
 There's a plethora of triggers you can use to run a GitHub Action. You can run it on a schedule, on a push or a pull request, or even on a release.
 
-Today we're going to talk about `workflow_dispatch`, a trigger that allows you to manually trigger a GitHub Action, without having to push or create a pull request. **Bonus: you can also pass custom parameters!**
+Today the spotlight is on `workflow_dispatch`, a trigger that allows you to manually trigger a GitHub Action, without having to push or create a pull request. **Bonus: you can also pass custom parameters!**
 
 ## How to use workflow_dispatch
 
@@ -76,7 +76,7 @@ In this case, the variable we read is `name`, which is the name of the input we 
 
 ## Input types
 
-You can also specify the type of the input. There are many types, for example: `string`, `boolean` and `choice`, and `url`. If you don't specify a type, the default is `string`.
+You can also specify the type of the input. There are many types, for example: `string`, `boolean` and `choice`. If you don't specify a type, the default is `string`.
 
 - `string`: will render a simple text input.
 - `boolean`: is submitted through a checkbox.
