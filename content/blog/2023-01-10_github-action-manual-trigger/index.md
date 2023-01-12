@@ -90,4 +90,4 @@ You can also specify if the field is `required` and add a default value.
 
 `workflow_dispatch` is the keyword you need to run a GitHub Action on demand, without having to push or create a pull request.
 
-If you want to learn more on GitHub Actions, let me reccomend you my YouTube Playlist with all the videos I made about GitHub Actions. [Click here](https://www.youtube.com/playlist?list=PLOQjd5dsGSxKC4K12-iLnla5E7rjJr_Ts).
+If you want to learn more on GitHub Actions, let me recommend you my YouTube Playlist with all the videos I made about GitHub Actions. [Click here](https://www.youtube.com/playlist?list=PLOQjd5dsGSxKC4K12-iLnla5E7rjJr_Ts).
