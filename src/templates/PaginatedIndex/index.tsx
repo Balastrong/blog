@@ -63,6 +63,15 @@ export const pageQuery = graphql`
           title
           description
           tags
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(
+                width: 500
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
         }
       }
     }
