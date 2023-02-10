@@ -1,6 +1,7 @@
 ---
 title: How to find Code Smells - with examples
 date: "2022-10-10"
+featuredImage: ./_cover.png
 tags:
   - code-smell
   - tutorial

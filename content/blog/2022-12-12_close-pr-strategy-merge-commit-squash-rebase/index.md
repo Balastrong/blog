@@ -7,7 +7,7 @@ tags:
   - merge
   - squash
   - rebase
-featuredImage: "./_cover.png"
+featuredImage: ./_cover.png
 ---
 
 When Merging a Pull Request on GitHub, you mainly have three options, with a merge commit, squash or rebase.

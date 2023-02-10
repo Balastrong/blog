@@ -180,6 +180,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       title: String
       description: String
       date: Date @dateformat
+      featuredImage: File @fileByRelativePath
     }
 
     type Fields {

@@ -1,6 +1,7 @@
 ---
 title: Resolving Merge Conflicts with Visual Studio Code
 date: "2022-11-22"
+featuredImage: ./_cover.png
 tags:
   - vscode
   - tutorial

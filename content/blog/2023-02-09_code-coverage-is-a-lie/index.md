@@ -1,6 +1,7 @@
 ---
 title: "100% Code Coverage is a Lie"
 date: "2023-02-09"
+featuredImage: ./_cover.png
 tags:
   - webdev
   - testing

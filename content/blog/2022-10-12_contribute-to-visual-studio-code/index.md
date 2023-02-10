@@ -1,6 +1,7 @@
 ---
 title: How to contribute to Visual Studio Code
 date: "2022-10-12"
+featuredImage: ./_cover.png
 tags:
   - vscode
   - tutorial

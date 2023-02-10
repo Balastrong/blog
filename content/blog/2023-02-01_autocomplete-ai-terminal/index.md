@@ -1,6 +1,7 @@
 ---
 title: "Autocomplete and Artificial Intelligence in your Terminal"
 date: "2023-02-01"
+featuredImage: ./_cover.png
 tags:
   - terminal
   - autocomplete

@@ -4,6 +4,7 @@ date: "2023-01-12"
 tags:
   - git
   - commit
+featuredImage: ./_cover.jpg
 ---
 
 I'm quite sure all of these happened to you at least once:

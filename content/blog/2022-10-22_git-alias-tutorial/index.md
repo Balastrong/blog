@@ -1,6 +1,7 @@
 ---
 title: 🕵️‍♂️ Learn git alias and boost your productivity
 date: "2022-10-22"
+featuredImage: ./_cover.png
 tags:
   - git
   - tutorial
