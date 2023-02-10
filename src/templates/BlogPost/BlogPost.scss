@@ -5,6 +5,13 @@
   gap: style.$space2;
   flex-direction: column;
 
+  &_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   &_content {
     > *:first-child {
       margin-top: 0;
@@ -14,12 +21,6 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-    }
-  }
-
-  &_header {
-    h1 {
-      margin-bottom: 0;
     }
   }
 

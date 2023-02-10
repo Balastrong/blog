@@ -24,6 +24,7 @@ export type Post = {
     description?: string;
     slug?: string;
     tags?: string[];
+    featuredImage: any;
   };
   fields: {
     slug: string;

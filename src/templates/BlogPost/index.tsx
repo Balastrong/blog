@@ -1,9 +1,10 @@
-import { Bio, Layout, Navigator, PostMeta, Seo, TagList } from "components";
-import { graphql, Link } from "gatsby";
+import { Layout, Navigator, PostMeta, Seo } from "components";
+import { DiscussionEmbed } from "disqus-react";
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
 import "./BlogPost.scss";
-import { DiscussionEmbed } from "disqus-react";
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -23,6 +24,8 @@ const BlogPostTemplate = ({
     config: { identifier: post.fields.slug, title: post.frontmatter.title },
   };
 
+  const image = getImage(post.frontmatter.featuredImage);
+
   return (
     <Layout section="blog" title={siteTitle}>
       <article
@@ -31,6 +34,11 @@ const BlogPostTemplate = ({
         itemType="http://schema.org/Article"
       >
         <header className="BlogPost_header">
+          <div className="BlogPost_header__cover">
+            {image && (
+              <GatsbyImage image={image} alt={post.frontmatter.title} />
+            )}
+          </div>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <PostMeta post={post} />
         </header>
@@ -69,17 +77,42 @@ const BlogPostTemplate = ({
 };
 
 export const Head = ({
-  data: { markdownRemark: post },
+  data: {
+    markdownRemark: post,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
 }: {
   data: {
     markdownRemark: Post;
+    site: { siteMetadata: SiteMetadata };
   };
 }) => {
+  const image = getImage(post.frontmatter.featuredImage);
+  const imageSrc = image?.images.fallback?.src;
+  const imageHeight = "" + image?.height;
+  const imageWidth = "" + image?.width;
+
   return (
     <Seo
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
-    />
+    >
+      <meta property="og:type" content="article" />
+      {imageSrc && (
+        <meta property="og:image" content={`${siteUrl}${imageSrc}`} />
+      )}
+      {imageWidth && <meta property="og:image:width" content={imageWidth} />}
+      {imageHeight && <meta property="og:image:height" content={imageHeight} />}
+      <meta property="og:image:alt" content={post.frontmatter.title} />
+      <meta property="og:url" content={`${siteUrl}/${post.fields.slug}`} />
+      <meta property="og:site_name" content="Leonardo Montini" />
+      <meta property="article:published_time" content={post.frontmatter.date} />
+      <meta property="article:modified_time" content={post.frontmatter.date} />
+      <meta property="article:author" content="Leonardo Montini" />
+      <meta property="article:section" content="Blog" />
+    </Seo>
   );
 };
 
@@ -94,6 +127,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -105,6 +139,15 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tags
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData(
+              width: 1024
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
       }
       fields {
         slug
