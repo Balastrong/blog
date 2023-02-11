@@ -1,6 +1,8 @@
 ---
 title: "Hey GitHub! Using Copilot with your Voice"
 date: "2023-01-20"
+description: "As simple as installing a VSCode extension and you can code by talking to your computer"
+featuredImage: "./_cover.png"
 tags:
   - github
   - copilot

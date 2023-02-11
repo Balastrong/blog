@@ -42,7 +42,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
             date(formatString: "MMMM DD, YYYY")
             tags
           }
-          excerpt(pruneLength: 200)
+          excerpt
         }
       }
     }

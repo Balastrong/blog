@@ -1,6 +1,8 @@
 ---
 title: How Contribute to Open Source can Change Your Life
 date: "2022-06-26"
+description: "8 reasons why you should start contributing to Open Source today!"
+featuredImage: "./_cover.jpeg"
 tags:
   - open-source
   - tutorial

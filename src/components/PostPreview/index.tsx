@@ -16,11 +16,13 @@ export function PostPreview({ post }: { post: Post }) {
         <header className="PostPreview_header">
           {image && (
             <div className="PostPreview_image">
-              <GatsbyImage
-                image={image}
-                alt={post.frontmatter.title}
-                className="PostPreview_img"
-              />
+              <Link to={url}>
+                <GatsbyImage
+                  image={image}
+                  alt={post.frontmatter.title}
+                  className="PostPreview_img"
+                />
+              </Link>
             </div>
           )}
           <div className="PostPreview_heading">
@@ -38,7 +40,7 @@ export function PostPreview({ post }: { post: Post }) {
           />
         </section>
         <Link to={post.fields.slug} className="PostPreview_button">
-          Read more...
+          =&gt; Read more &lt;=
         </Link>
       </div>
     </article>

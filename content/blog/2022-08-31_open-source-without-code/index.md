@@ -1,6 +1,8 @@
 ---
 title: Open Source is not only writing code 🙅‍♂️🧑‍💻
 date: "2022-08-31"
+description: Open Source is not only writing code, here some other activities that are as important as coding.
+featuredImage: "./_cover.jpeg"
 tags:
   - open-source
   - github

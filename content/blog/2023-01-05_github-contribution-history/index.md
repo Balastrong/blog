@@ -1,6 +1,8 @@
 ---
 title: "My GitHub Contribution History (2014-2023)"
 date: "2023-01-05"
+description: "Green squares on GitHub aren't just a mere activity indicator. Move a step back and look at the bigger picture: they tell a story, your story."
+featuredImage: "./_cover.png"
 tags:
   - github
   - open-source

@@ -1,6 +1,8 @@
 ---
 title: 💰 Get paid while contributing to Open Source
 date: "2022-09-11"
+description: "What if I tell you that you get paid in real money - with Open Source? Wait, that's not a scam or a get-rich-quick article. Let me explain."
+featuredImage: "./_cover.png"
 tags:
   - open-source
   - github

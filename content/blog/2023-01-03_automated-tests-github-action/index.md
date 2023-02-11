@@ -1,6 +1,8 @@
 ---
 title: "Running Automated Tests with GitHub Actions"
 date: "2023-01-03"
+description: "GitHub Actions can bring your project to life, for real!"
+featuredImage: "./_cover.png"
 tags:
   - github
   - github-actions

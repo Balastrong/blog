@@ -96,7 +96,7 @@ export const plugins: PluginRef[] = [
           query: `{
               allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
                 nodes {
-                  excerpt(pruneLength: 250)
+                  excerpt(pruneLength: 400)
                   html
                   fields {
                     slug

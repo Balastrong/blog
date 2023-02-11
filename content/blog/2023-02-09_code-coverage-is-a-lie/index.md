@@ -2,6 +2,7 @@
 title: "100% Code Coverage is a Lie"
 date: "2023-02-09"
 featuredImage: ./_cover.png
+description: "On a project I finally hit 100% Code Coverage 🎯 what could go wrong now?"
 tags:
   - webdev
   - testing

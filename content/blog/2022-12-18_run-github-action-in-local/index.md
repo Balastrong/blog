@@ -1,6 +1,8 @@
 ---
 title: "How to run a GitHub Action in local - act LIVE DEMO"
 date: "2022-12-18"
+description: "There's no need to commit and push each time, you can run GitHub Actions locally with act!"
+featuredImage: "./_cover.png"
 tags:
   - github
   - github-actions

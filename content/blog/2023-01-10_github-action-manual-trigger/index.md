@@ -1,6 +1,8 @@
 ---
 title: "Manually Trigger a GitHub Action with Workflow Dispatch"
 date: "2023-01-10"
+description: "Run Actions manually from GitHub's UI, you can even pass parameters!"
+featuredImage: "./_cover.png"
 tags:
   - github
   - github-actions

@@ -1,6 +1,8 @@
 ---
 title: How to find 🔎 an Open Source project to contribute to
 date: "2022-08-23"
+description: "A few easy tips to find the right project to contribute to in minutes!"
+featuredImage: "./_cover.jpeg"
 tags:
   - open-source
   - github
