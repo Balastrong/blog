@@ -19,11 +19,6 @@ const BlogPostTemplate = ({
   };
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`;
-  const disqusConfig = {
-    shortname: "leonardomontini",
-    config: { identifier: post.fields.slug, title: post.frontmatter.title },
-  };
-
   const image = getImage(post.frontmatter.featuredImage);
 
   return (
@@ -48,7 +43,14 @@ const BlogPostTemplate = ({
           itemProp="articleBody"
         />
         <section>
-          <DiscussionEmbed {...disqusConfig} />
+          <DiscussionEmbed
+            shortname={"leonardomontini"}
+            config={{
+              url: `${site.siteMetadata.siteUrl}${post.fields.slug}`,
+              identifier: post.fields.slug,
+              title: post.frontmatter.title,
+            }}
+          />
         </section>
       </article>
       <footer className="BlogPost_footer">
