@@ -1,4 +1,4 @@
-import { Layout, Navigator, PostMeta, Seo } from "components";
+import { Layout, Navigator, PostMeta, Seo, SocialShare } from "components";
 import { DiscussionEmbed } from "disqus-react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -29,7 +29,7 @@ const BlogPostTemplate = ({
         itemType="http://schema.org/Article"
       >
         <header className="BlogPost_header">
-          <div className="BlogPost_header__cover">
+          <div className="BlogPost_headerImage">
             {image && (
               <GatsbyImage image={image} alt={post.frontmatter.title} />
             )}
@@ -42,6 +42,9 @@ const BlogPostTemplate = ({
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        <section>
+          <SocialShare post={post} />
+        </section>
         <section>
           <DiscussionEmbed
             shortname={"leonardomontini"}

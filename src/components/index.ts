@@ -11,5 +11,6 @@ export { PostMeta } from "./PostMeta";
 export { PostPreview } from "./PostPreview";
 export { PostPreviewList } from "./PostPreviewList";
 export { Seo } from "./Seo";
+export { SocialShare } from "./SocialShare";
 export { Tag } from "./Tag";
 export { TagList } from "./TagList";

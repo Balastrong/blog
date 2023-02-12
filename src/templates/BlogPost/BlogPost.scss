@@ -12,6 +12,13 @@
     text-align: center;
   }
 
+  &_headerImage {
+    img {
+      border-bottom-left-radius: style.$borderRadius;
+      border-bottom-right-radius: style.$borderRadius;
+    }
+  }
+
   &_content {
     > *:first-child {
       margin-top: 0;
