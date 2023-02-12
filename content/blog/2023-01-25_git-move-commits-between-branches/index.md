@@ -1,6 +1,8 @@
 ---
 title: "Git: 3 ways of moving commits between branches"
 date: "2023-01-25"
+description: Did a commit in the wrong branch? Moving it is easier than you might think!
+featuredImage: "./_cover.png"
 tags:
   - git
   - branch
