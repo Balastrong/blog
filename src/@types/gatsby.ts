@@ -6,6 +6,7 @@ export type SiteMetadata = {
   };
   description: string;
   siteUrl: string;
+  siteImage: any;
   social: {
     twitter: string;
     twitterHandle: string;

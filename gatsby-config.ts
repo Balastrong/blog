@@ -15,6 +15,7 @@ export const siteMetadata: SiteMetadata = {
   },
   description: `Technical content on Open Source, Web Development and Visual Studio Code. I'm Leonardo Montini and that's what I like to talk about, let's get in touch!`,
   siteUrl: `https://leonardomontini.dev/`,
+  siteImage: `src/images/propic_blue.jpg`,
   social: {
     twitter: `https://twitter.com/balastrong`,
     twitterHandle: `balastrong`,

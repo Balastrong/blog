@@ -160,6 +160,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       author: Author
       siteUrl: String
       social: Social
+      siteImage: File @fileByRelativePath
     }
 
     type Author {
