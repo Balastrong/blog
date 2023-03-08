@@ -10,6 +10,7 @@ export { Paginator } from "./Paginator";
 export { PostMeta } from "./PostMeta";
 export { PostPreview } from "./PostPreview";
 export { PostPreviewList } from "./PostPreviewList";
+export { PostThumb } from "./PostThumb";
 export { Seo } from "./Seo";
 export { SocialShare } from "./SocialShare";
 export { Tag } from "./Tag";

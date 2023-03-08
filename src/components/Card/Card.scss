@@ -4,7 +4,7 @@
   border: 1px solid style.$primary;
   padding: style.$space2;
   border-radius: 10px;
-  transition: transform 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   background-color: style.$tertiary;
 
   &:hover {
