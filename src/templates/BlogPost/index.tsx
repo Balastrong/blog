@@ -18,11 +18,10 @@ const BlogPostTemplate = ({
     markdownRemark: Post;
   };
 }) => {
-  const siteTitle = site.siteMetadata?.title || `Title`;
   const image = getImage(post.frontmatter.featuredImage);
 
   return (
-    <Layout section="blog" title={siteTitle}>
+    <Layout section="blog">
       <article
         className="BlogPost"
         itemScope
@@ -31,7 +30,12 @@ const BlogPostTemplate = ({
         <header className="BlogPost_header">
           <div className="BlogPost_headerImage">
             {image && (
-              <GatsbyImage image={image} alt={post.frontmatter.title} />
+              <GatsbyImage
+                image={image}
+                alt={post.frontmatter.title}
+                style={{ maxWidth: "750px" }}
+                imgStyle={{ objectFit: "contain" }}
+              />
             )}
           </div>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>

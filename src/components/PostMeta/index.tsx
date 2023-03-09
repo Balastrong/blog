@@ -5,7 +5,7 @@ import "./PostMeta.scss";
 
 export function PostMeta({ post }: { post: Post }) {
   return (
-    <p className="PostMeta">
+    <span className="PostMeta">
       {post.frontmatter.date}
       {post.frontmatter.tags && (
         <>
@@ -13,6 +13,6 @@ export function PostMeta({ post }: { post: Post }) {
           <TagList tags={post.frontmatter.tags} />
         </>
       )}
-    </p>
+    </span>
   );
 }

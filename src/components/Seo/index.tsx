@@ -26,11 +26,6 @@ export function Seo({
             title
             description
             siteUrl
-            siteImage {
-              childImageSharp {
-                gatsbyImageData(width: 1024)
-              }
-            }
             social {
               twitterHandle
             }

@@ -4,4 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: style.$space1;
+  margin-bottom: style.$space2;
+  line-height: 1.5em;
 }
