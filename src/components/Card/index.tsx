@@ -1,6 +1,14 @@
 import React from "react";
 import "./Card.scss";
 
-export function Card({ children }: { children: React.ReactNode }) {
-  return <div className="Card">{children}</div>;
+export function Card({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`Card${className ? " " + className : ""}`}>{children}</div>
+  );
 }

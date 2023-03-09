@@ -1,16 +1,28 @@
-import { Layout, PostThumb, Seo } from "components";
-import { graphql } from "gatsby";
+import {
+  Layout,
+  NavigatorButton,
+  PostThumb,
+  Seo,
+  VideoThumb,
+} from "components";
+import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { getVideos } from "libs";
 import React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
+import { YouTubeVideo } from "types/youtube";
 
 const About = ({
   data: {
     site: {
-      siteMetadata: { author },
+      siteMetadata: {
+        author,
+        social: { youtube },
+      },
     },
     allMarkdownRemark: { nodes: posts },
   },
+  serverData: { videos },
 }: {
   data: {
     site: {
@@ -20,11 +32,14 @@ const About = ({
       nodes: Post[];
     };
   };
+  serverData: {
+    videos: YouTubeVideo[];
+  };
 }) => {
   return (
-    <Layout section="about" title="About me">
+    <Layout section="about" title="About me" className="About">
       <section className="About_me">
-        <h2>{author.name}</h2>
+        <h2 className="Shades_blue">{author.name}</h2>
         <StaticImage
           layout="fixed"
           formats={["auto", "png"]}
@@ -38,15 +53,33 @@ const About = ({
           <p>{author.summary}</p>
         </div>
       </section>
-      <section>
-        <h2>Latest YouTube Videos</h2>
+      <section className="About_listSection">
+        <h2 className="Shades_red">YouTube</h2>
+        <small>Watch my latest videos</small>
+        <div className="About_listContainer">
+          {videos.map((video, i) => (
+            <VideoThumb key={i} video={video} />
+          ))}
+        </div>
+        <div className="About_listLink">
+          <NavigatorButton
+            link={youtube}
+            text="Go to my channel"
+            arrow="right"
+            isInternalLink={false}
+          />
+        </div>
       </section>
-      <section>
-        <h2>Latest Blog Posts</h2>
+      <section className="About_listSection">
+        <h2 className="Shades_green">Blog</h2>
+        <small>Pretty much the same YouTube content, but written!</small>
         <div className="About_listContainer">
           {posts.map(post => (
             <PostThumb key={post.fields.slug} post={post} />
           ))}
+        </div>
+        <div className="About_listLink">
+          <NavigatorButton link={"/"} text="Go to all articles" arrow="right" />
         </div>
       </section>
     </Layout>
@@ -95,3 +128,11 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export const getServerData = async () => {
+  return {
+    props: {
+      videos: await getVideos(),
+    },
+  };
+};

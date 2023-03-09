@@ -15,3 +15,4 @@ export { Seo } from "./Seo";
 export { SocialShare } from "./SocialShare";
 export { Tag } from "./Tag";
 export { TagList } from "./TagList";
+export { VideoThumb } from "./VideoThumb";

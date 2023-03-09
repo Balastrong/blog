@@ -7,6 +7,10 @@ $textColorLight: #4f5969;
 $linkColor: #005b99;
 $backgroundColor: #e8eef5;
 
+$redShade: linear-gradient(to right, #9e0000, #c40000, #e60000, #ff0000);
+$blueShade: linear-gradient(to right, #00bfff, #00a5ff, #007aff, #004cff);
+$greenShade: linear-gradient(to right, #00ff00, #00e600, #00cc00, #00b300);
+
 /* Media queries */
 $break-small: 480px;
 $break-medium: 768px;

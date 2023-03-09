@@ -2,6 +2,14 @@
 @use "style/mixins.scss" as mixins;
 
 .About {
+  h2 {
+    font-size: 5em;
+
+    @include mixins.medium {
+      font-size: 3em;
+    }
+  }
+
   &_me {
     display: flex;
     flex-direction: column;
@@ -20,11 +28,29 @@
     }
   }
 
+  &_listSection {
+    text-align: center;
+    margin: variables.$space6 0;
+
+    & > h2 {
+      margin: variables.$space1;
+    }
+
+    & > small {
+      font-size: 1.1em;
+
+      @include mixins.medium {
+        font-size: 0.9em;
+      }
+    }
+  }
+
   &_listContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(0, 1fr);
     gap: variables.$space4;
+    margin-top: variables.$space2;
 
     @include mixins.medium {
       grid-template-columns: repeat(2, 1fr);
@@ -33,6 +59,24 @@
 
     @include mixins.small {
       grid-template-columns: 1fr;
+    }
+  }
+
+  &_listLink {
+    display: flex;
+    justify-content: right;
+    margin: variables.$space4 0;
+
+    a {
+      text-decoration: none;
+    }
+
+    @include mixins.medium {
+      margin: variables.$space2 0;
+    }
+
+    @include mixins.small {
+      justify-content: center;
     }
   }
 }

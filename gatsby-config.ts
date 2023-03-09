@@ -7,6 +7,10 @@
 import { PluginRef } from "gatsby";
 import { SiteMetadata } from "./src/@types/gatsby";
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 export const siteMetadata: SiteMetadata = {
   title: `Leonardo's Blog`,
   author: {

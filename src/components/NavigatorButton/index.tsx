@@ -9,10 +9,12 @@ export function NavigatorButton({
   link,
   text,
   arrow,
+  isInternalLink = true,
 }: {
   link: string;
   text: string;
   arrow: "left" | "right";
+  isInternalLink?: boolean;
 }) {
   return (
     <div className="NavigatorButton">
@@ -30,7 +32,13 @@ export function NavigatorButton({
             )}
           </Link>
           <div className="NavigatorButton_text">
-            <Link to={link}>{text}</Link>
+            {isInternalLink ? (
+              <Link to={link}>{text}</Link>
+            ) : (
+              <a href={link} target="_blank">
+                {text}
+              </a>
+            )}
           </div>
         </div>
       </Card>

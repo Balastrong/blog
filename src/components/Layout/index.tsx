@@ -7,15 +7,17 @@ export function Layout({
   section,
   title,
   children,
+  className,
 }: {
   section?: Section;
   title: string;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <div className="Layout">
       <Header section={section} />
-      <main className="Layout_main">{children}</main>
+      <main className={`Layout_main ${className ?? ""}`}>{children}</main>
       <Footer />
     </div>
   );
