@@ -22,7 +22,7 @@ const Index = ({
     },
     allMarkdownRemark: { nodes: posts },
   },
-  serverData: { videos },
+  serverData,
 }: {
   data: {
     site: {
@@ -32,10 +32,12 @@ const Index = ({
       nodes: Post[];
     };
   };
-  serverData: {
+  serverData?: {
     videos: YouTubeVideo[];
   };
 }) => {
+  const videos = serverData?.videos || [];
+
   return (
     <Layout className="Home">
       <section className="Home_me">
@@ -134,7 +136,7 @@ export const pageQuery = graphql`
     }
   }
 `;
-
+/*
 export const getServerData = async () => {
   const videos = await getVideos();
 
@@ -144,3 +146,4 @@ export const getServerData = async () => {
     },
   };
 };
+*/

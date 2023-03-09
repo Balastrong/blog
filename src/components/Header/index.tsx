@@ -54,7 +54,7 @@ export function Header({ section }: { section: Section | undefined }) {
             </Link>
           </div>
           <nav className="Header_nav">
-            <NavLink to="/" active={section === "blog"}>
+            <NavLink to="/page/1" active={section === "blog"}>
               Blog
             </NavLink>
             <NavLink to="/youtube" active={section === "youtube"}>
