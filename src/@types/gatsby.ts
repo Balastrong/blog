@@ -34,7 +34,7 @@ export type Post = {
   html: string;
 };
 
-export type Section = "blog" | "youtube" | "about";
+export type Section = "blog" | "youtube" | "projects" | "career";
 
 export type PaginatedIndexContext = {
   currentPage: number;
