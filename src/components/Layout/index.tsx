@@ -5,12 +5,10 @@ import "./Layout.scss";
 
 export function Layout({
   section,
-  title,
   children,
   className,
 }: {
   section?: Section;
-  title: string;
   children: React.ReactNode;
   className?: string;
 }) {

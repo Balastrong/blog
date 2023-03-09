@@ -5,14 +5,14 @@ import {
   Seo,
   VideoThumb,
 } from "components";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { getVideos } from "libs";
 import React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
 import { YouTubeVideo } from "types/youtube";
 
-const About = ({
+const Index = ({
   data: {
     site: {
       siteMetadata: {
@@ -37,8 +37,8 @@ const About = ({
   };
 }) => {
   return (
-    <Layout section="about" title="About me" className="About">
-      <section className="About_me">
+    <Layout className="Home">
+      <section className="Home_me">
         <h2 className="Shades_blue">{author.name}</h2>
         <StaticImage
           layout="fixed"
@@ -49,19 +49,19 @@ const About = ({
           quality={100}
           alt="Profile picture"
         />
-        <div className="About_summary">
+        <div className="Home_summary">
           <p>{author.summary}</p>
         </div>
       </section>
-      <section className="About_listSection">
+      <section className="Home_listSection">
         <h2 className="Shades_red">YouTube</h2>
         <small>Watch my latest videos</small>
-        <div className="About_listContainer">
+        <div className="Home_listContainer">
           {videos.map((video, i) => (
             <VideoThumb key={i} video={video} />
           ))}
         </div>
-        <div className="About_listLink">
+        <div className="Home_listLink">
           <NavigatorButton
             link={youtube}
             text="Go to my channel"
@@ -70,25 +70,31 @@ const About = ({
           />
         </div>
       </section>
-      <section className="About_listSection">
+      <section className="Home_listSection">
         <h2 className="Shades_green">Blog</h2>
         <small>Pretty much the same YouTube content, but written!</small>
-        <div className="About_listContainer">
+        <div className="Home_listContainer">
           {posts.map(post => (
             <PostThumb key={post.fields.slug} post={post} />
           ))}
         </div>
-        <div className="About_listLink">
-          <NavigatorButton link={"/"} text="Go to all articles" arrow="right" />
+        <div className="Home_listLink">
+          <NavigatorButton
+            link={"/page/1"}
+            text="Go to all articles"
+            arrow="right"
+          />
         </div>
       </section>
+      {/* Backlink to verify on Mastodon */}
+      <a rel="me" href="https://fosstodon.org/@balastrong"></a>
     </Layout>
   );
 };
 
-export default About;
+export default Index;
 
-export const Head = () => <Seo title="About me" />;
+export const Head = () => <Seo title={"Hello"} />;
 
 export const pageQuery = graphql`
   {

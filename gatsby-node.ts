@@ -67,7 +67,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     const numPages = Math.ceil(posts.length / postsPerPage);
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
-        path: i === 0 ? `/` : `/page/${i + 1}`,
+        path: `/page/${i + 1}`,
         component: paginatedIndexTemplate,
         context: {
           limit: postsPerPage,

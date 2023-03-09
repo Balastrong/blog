@@ -11,23 +11,16 @@ const PaginatedPosts = ({
   data: any;
   pageContext: PaginatedIndexContext;
 }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const posts: Post[] = data.allMarkdownRemark.nodes;
-  const isFirstPage = pageContext.currentPage === 0;
 
   return (
-    <Layout section="blog" title={siteTitle}>
+    <Layout section="blog">
       <div className="PaginatedIndex">
         <main className="PaginatedIndex_postPreview">
-          {isFirstPage && <Bio />}
           <PostPreviewList posts={posts} />
           <Paginator context={pageContext} />
         </main>
       </div>
-      {isFirstPage && (
-        /* Backlink to verify on Mastodon */
-        <a rel="me" href="https://fosstodon.org/@balastrong"></a>
-      )}
     </Layout>
   );
 };
