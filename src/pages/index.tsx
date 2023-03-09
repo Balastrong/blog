@@ -136,9 +136,11 @@ export const pageQuery = graphql`
 `;
 
 export const getServerData = async () => {
+  const videos = await getVideos();
+
   return {
     props: {
-      videos: await getVideos(),
+      videos,
     },
   };
 };

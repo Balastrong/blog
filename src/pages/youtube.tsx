@@ -4,7 +4,7 @@ import React from "react";
 
 const YouTube = () => {
   return (
-    <Layout section="youtube" title="YouTube">
+    <Layout section="youtube">
       <h2>My YouTube Journey</h2>
       <p>
         Appearing on camera and talking about Open Source and technical stuff in
