@@ -22,7 +22,7 @@ const Index = ({
     },
     allMarkdownRemark: { nodes: posts },
   },
-  serverData: { videos },
+  serverData,
 }: {
   data: {
     site: {
@@ -39,7 +39,9 @@ const Index = ({
   return (
     <Layout className="Home">
       <section className="Home_me">
-        <h2 className="Shades_blue">{author.name}</h2>
+        <h2 className="Shades_blue">
+          {author.name} {JSON.stringify(serverData)}
+        </h2>
         <StaticImage
           layout="fixed"
           formats={["auto", "png"]}
@@ -57,9 +59,9 @@ const Index = ({
         <h2 className="Shades_red">YouTube</h2>
         <small>Watch my latest videos</small>
         <div className="Home_listContainer">
-          {videos?.map(video => (
+          {/* {(videos ?? []).map(video => (
             <VideoThumb key={video.id.videoId} video={video} />
-          ))}
+          ))} */}
         </div>
         <div className="Home_listLink">
           <NavigatorButton
@@ -136,11 +138,12 @@ export const pageQuery = graphql`
 `;
 
 export const getServerData = async () => {
-  const videos = await getVideos();
+  const videos = null; // await getVideos();
 
   return {
     props: {
-      videos,
+      foo: "bar",
+      //videos: videos ?? [],
     },
   };
 };

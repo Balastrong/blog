@@ -1,18 +1,12 @@
 import React from "react";
 
-const Env = ({
-  serverData,
-}: {
-  serverData: {
-    hello: string;
-  };
-}) => {
+const Env = ({ serverData }: any) => {
   console.log("serverData", serverData);
 
   return (
     <div>
       <h1>Env</h1>
-      <p>--{serverData?.hello}--</p>
+      <p>AAA{JSON.stringify(serverData)}AAA</p>
     </div>
   );
 };
@@ -20,12 +14,10 @@ const Env = ({
 export default Env;
 
 export const getServerData = async () => {
-  const hello = process.env.GATSBY_HELLO_ENV;
-
   return {
     props: {
       foo: "bar",
-      hello,
+      env: process.env.GATSBY_HELLO_ENV,
     },
   };
 };

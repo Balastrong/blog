@@ -30,6 +30,7 @@ export const siteMetadata: SiteMetadata = {
   },
 };
 export const plugins: PluginRef[] = [
+  "gatsby-plugin-netlify",
   `gatsby-plugin-image`,
   {
     resolve: `gatsby-source-filesystem`,
@@ -136,5 +137,4 @@ export const plugins: PluginRef[] = [
   "gatsby-plugin-sass",
   "gatsby-plugin-sitemap",
   "gatsby-plugin-offline",
-  "gatsby-plugin-netlify",
 ];
