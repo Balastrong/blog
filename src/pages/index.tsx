@@ -22,6 +22,7 @@ const Index = ({
     },
     allMarkdownRemark: { nodes: posts },
   },
+  serverData,
 }: {
   data: {
     site: {
@@ -31,10 +32,12 @@ const Index = ({
       nodes: Post[];
     };
   };
+  serverData: any;
 }) => {
   return (
     <Layout className="Home">
       <section className="Home_me">
+        {JSON.stringify(serverData)}
         <h2 className="Shades_blue">{author.name}</h2>
         <StaticImage
           layout="fixed"
@@ -130,3 +133,12 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export const getServerData = async () => {
+  return {
+    props: {
+      foo: "bar",
+      env: process.env.GATSBY_HELLO_ENV,
+    },
+  };
+};
