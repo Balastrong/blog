@@ -1,6 +1,6 @@
 import React from "react";
 
-const SSR = ({ serverData }) => {
+const SSR = ({ serverData }: any) => {
   return (
     <div>
       <h1>SSR</h1>
