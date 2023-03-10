@@ -12,7 +12,13 @@ import React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
 import { YouTubeVideo } from "types/youtube";
 
-const Index = ({ serverData }: { serverData: any }) => {
+const Index = ({
+  serverData: { videos },
+}: {
+  serverData: {
+    videos: YouTubeVideo[];
+  };
+}) => {
   const {
     site: {
       siteMetadata: {
@@ -88,7 +94,7 @@ const Index = ({ serverData }: { serverData: any }) => {
         <h2 className="Shades_red">YouTube</h2>
         <small>Watch my latest videos</small>
         <div className="Home_listContainer">
-          {(serverData.videos ?? []).map((video: YouTubeVideo) => (
+          {(videos ?? []).map(video => (
             <VideoThumb key={video.id.videoId} video={video} />
           ))}
         </div>
