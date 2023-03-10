@@ -1,11 +1,13 @@
 import { Seo } from "components";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { getVideos } from "libs";
 import React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
 
-const Env = ({
-  data: {
+const Env = ({ serverData }: { serverData: any }) => {
+  console.log("serverData", serverData);
+
+  const {
     site: {
       siteMetadata: {
         author,
@@ -13,20 +15,51 @@ const Env = ({
       },
     },
     allMarkdownRemark: { nodes: posts },
-  },
-  serverData,
-}: {
-  data: {
+  } = useStaticQuery<{
     site: {
       siteMetadata: SiteMetadata;
     };
     allMarkdownRemark: {
       nodes: Post[];
     };
-  };
-  serverData: any;
-}) => {
-  console.log("serverData", serverData);
+  }>(graphql`
+    {
+      site {
+        siteMetadata {
+          author {
+            name
+            summary
+          }
+          social {
+            youtube
+          }
+        }
+      }
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 6) {
+        nodes {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            tags
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 500
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <div>
@@ -38,7 +71,7 @@ const Env = ({
         </div>
       ))}
       {posts.map(post => (
-        <div key={post.id}>{post.frontmatter.title}</div>
+        <div key={post.frontmatter.slug}>{post.frontmatter.title}</div>
       ))}
     </div>
   );
@@ -47,45 +80,6 @@ const Env = ({
 export default Env;
 
 export const Head = () => <Seo title={"Hello"} />;
-
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        author {
-          name
-          summary
-        }
-        social {
-          youtube
-        }
-      }
-    }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 6) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          tags
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(
-                width: 500
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export const getServerData = async () => {
   const videos = await getVideos();
