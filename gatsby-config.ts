@@ -8,7 +8,7 @@ import { PluginRef } from "gatsby";
 import { SiteMetadata } from "./src/@types/gatsby";
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 });
 
 export const siteMetadata: SiteMetadata = {
