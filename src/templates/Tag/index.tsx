@@ -17,7 +17,7 @@ const TagTemplate = ({
   } tagged with "${tag}"`;
 
   return (
-    <Layout title={tag}>
+    <Layout>
       <Seo title={tag} />
       <h1>{tagHeader}</h1>
       <PostPreviewList posts={posts} />

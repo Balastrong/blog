@@ -12,7 +12,7 @@ require("dotenv").config({
 });
 
 export const siteMetadata: SiteMetadata = {
-  title: `Leonardo's Blog`,
+  title: `Leonardo Montini`,
   author: {
     name: `Leonardo Montini`,
     summary: `Web Developer, Open Source enthusiast and Content Creator.`,

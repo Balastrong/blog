@@ -11,12 +11,11 @@ const NotFoundPage = ({
   data: { site: { siteMetadata: SiteMetadata } };
 }) => {
   const {
-    title,
     social: { twitter, discord },
   } = siteMetadata;
 
   return (
-    <Layout title={title}>
+    <Layout>
       <h1>404: Not Found</h1>
       <p>
         Looks like the page you were looking for does not exist, how did that

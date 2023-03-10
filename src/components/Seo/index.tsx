@@ -8,7 +8,7 @@ export function Seo({
   description,
   children,
 }: {
-  title: string;
+  title?: string;
   description?: string;
   children?: React.ReactNode;
 }) {
@@ -41,7 +41,7 @@ export function Seo({
 
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />

@@ -131,7 +131,7 @@ const Index = ({
 
 export default Index;
 
-export const Head = () => <Seo title={"Hello"} />;
+export const Head = () => <Seo />;
 
 export const getServerData = async () => {
   const videos = await getVideos();
