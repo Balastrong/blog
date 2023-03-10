@@ -5,15 +5,15 @@ import {
   Seo,
   VideoThumb,
 } from "components";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { getVideos } from "libs";
 import React from "react";
 import { Post, SiteMetadata } from "types/gatsby";
 import { YouTubeVideo } from "types/youtube";
 
-const Index = ({
-  data: {
+const Index = ({ serverData }: { serverData: any }) => {
+  const {
     site: {
       siteMetadata: {
         author,
@@ -21,20 +21,52 @@ const Index = ({
       },
     },
     allMarkdownRemark: { nodes: posts },
-  },
-  serverData,
-}: {
-  data: {
+  } = useStaticQuery<{
     site: {
       siteMetadata: SiteMetadata;
     };
     allMarkdownRemark: {
       nodes: Post[];
     };
-  };
-  serverData: any;
-}) => {
-  console.log("serverData", serverData);
+  }>(graphql`
+    {
+      site {
+        siteMetadata {
+          author {
+            name
+            summary
+          }
+          social {
+            youtube
+          }
+        }
+      }
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 6) {
+        nodes {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            tags
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 500
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Layout className="Home">
       <section className="Home_me">
@@ -56,9 +88,9 @@ const Index = ({
         <h2 className="Shades_red">YouTube</h2>
         <small>Watch my latest videos</small>
         <div className="Home_listContainer">
-          {/* {(videos ?? []).map(video => (
+          {(serverData.videos ?? []).map((video: YouTubeVideo) => (
             <VideoThumb key={video.id.videoId} video={video} />
-          ))} */}
+          ))}
         </div>
         <div className="Home_listLink">
           <NavigatorButton
@@ -95,50 +127,13 @@ export default Index;
 
 export const Head = () => <Seo title={"Hello"} />;
 
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        author {
-          name
-          summary
-        }
-        social {
-          youtube
-        }
-      }
-    }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 6) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          tags
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(
-                width: 500
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
 export const getServerData = async () => {
+  const videos = await getVideos();
+
   return {
     props: {
       foo: "bar",
-      env: process.env.GATSBY_HELLO_ENV,
+      videos,
     },
   };
 };
