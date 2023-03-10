@@ -22,7 +22,6 @@ const Index = ({
     },
     allMarkdownRemark: { nodes: posts },
   },
-  serverData,
 }: {
   data: {
     site: {
@@ -32,16 +31,11 @@ const Index = ({
       nodes: Post[];
     };
   };
-  serverData: {
-    videos: YouTubeVideo[];
-  };
 }) => {
   return (
     <Layout className="Home">
       <section className="Home_me">
-        <h2 className="Shades_blue">
-          {author.name} {JSON.stringify(serverData)}
-        </h2>
+        <h2 className="Shades_blue">{author.name}</h2>
         <StaticImage
           layout="fixed"
           formats={["auto", "png"]}
@@ -136,14 +130,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export const getServerData = async () => {
-  const videos = null; // await getVideos();
-
-  return {
-    props: {
-      foo: "bar",
-      //videos: videos ?? [],
-    },
-  };
-};
