@@ -57,8 +57,8 @@ const Index = ({
         <h2 className="Shades_red">YouTube</h2>
         <small>Watch my latest videos</small>
         <div className="Home_listContainer">
-          {videos?.map((video, i) => (
-            <VideoThumb key={i} video={video} />
+          {videos?.map(video => (
+            <VideoThumb key={video.id.videoId} video={video} />
           ))}
         </div>
         <div className="Home_listLink">

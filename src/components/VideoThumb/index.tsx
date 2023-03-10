@@ -9,7 +9,7 @@ import { YouTubeVideo } from "types/youtube";
 export function VideoThumb({ video }: { video: YouTubeVideo }) {
   const title = video.snippet.title;
   const image = video.snippet.thumbnails.medium.url;
-  const url = `https://www.youtube.com/watch?v=${video.id}`;
+  const url = `https://www.youtube.com/watch?v=${video.id.videoId}`;
   const date = new Date(video.snippet.publishedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
