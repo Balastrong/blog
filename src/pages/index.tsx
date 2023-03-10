@@ -38,7 +38,6 @@ const Index = ({
   return (
     <Layout className="Home">
       <section className="Home_me">
-        --{JSON.stringify(serverData)}--
         <h2 className="Shades_blue">{author.name}</h2>
         <StaticImage
           layout="fixed"
