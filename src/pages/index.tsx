@@ -22,7 +22,7 @@ const Index = ({
     },
     allMarkdownRemark: { nodes: posts },
   },
-  serverData,
+  serverData: { videos },
 }: {
   data: {
     site: {
@@ -32,12 +32,10 @@ const Index = ({
       nodes: Post[];
     };
   };
-  serverData?: {
+  serverData: {
     videos: YouTubeVideo[];
   };
 }) => {
-  const videos = serverData?.videos || [];
-
   return (
     <Layout className="Home">
       <section className="Home_me">
@@ -59,7 +57,7 @@ const Index = ({
         <h2 className="Shades_red">YouTube</h2>
         <small>Watch my latest videos</small>
         <div className="Home_listContainer">
-          {videos.map((video, i) => (
+          {videos?.map((video, i) => (
             <VideoThumb key={i} video={video} />
           ))}
         </div>
@@ -142,7 +140,7 @@ export const getServerData = async () => {
 
   return {
     props: {
-      videos: videos ?? [],
+      videos,
     },
   };
 };
