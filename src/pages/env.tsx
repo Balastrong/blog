@@ -1,16 +1,18 @@
 import React from "react";
 
 const Env = ({
-  serverData: { hello },
+  serverData,
 }: {
   serverData: {
     hello: string;
   };
 }) => {
+  console.log("serverData", serverData);
+
   return (
     <div>
       <h1>Env</h1>
-      <p>--{hello}--</p>
+      <p>--{serverData?.hello}--</p>
     </div>
   );
 };
@@ -22,6 +24,7 @@ export const getServerData = async () => {
 
   return {
     props: {
+      foo: "bar",
       hello,
     },
   };
