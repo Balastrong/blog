@@ -30,7 +30,12 @@ export const siteMetadata: SiteMetadata = {
   },
 };
 export const plugins: PluginRef[] = [
-  "gatsby-plugin-netlify",
+  {
+    resolve: `gatsby-plugin-netlify`,
+    options: {
+      mergeCachingHeaders: true,
+    },
+  },
   `gatsby-plugin-image`,
   {
     resolve: `gatsby-source-filesystem`,
