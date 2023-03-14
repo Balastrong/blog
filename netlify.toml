@@ -3,4 +3,4 @@ package = "@netlify/plugin-gatsby"
 [[headers]]
   for = "/*"
   [headers.values]
-  cache-control = '''max-age=600''
+  cache-control = "max-age=600"
