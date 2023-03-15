@@ -34,11 +34,18 @@ export type Post = {
   html: string;
 };
 
-export type Section = "blog" | "youtube" | "projects" | "career";
+export type Section = "blog" | "youtube" | "opensource" | "career";
 
 export type PaginatedIndexContext = {
   currentPage: number;
   numPages: number;
   limit: number;
   skip: number;
+};
+
+export type RepositoryFrontmatter = {
+  name: string;
+  owner: string;
+  description: string;
+  mainLanguage: string;
 };

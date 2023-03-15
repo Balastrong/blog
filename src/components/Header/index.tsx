@@ -60,6 +60,9 @@ export function Header({ section }: { section: Section | undefined }) {
             <NavLink to="/youtube" active={section === "youtube"}>
               YouTube
             </NavLink>
+            <NavLink to="/open-source" active={section === "opensource"}>
+              Open Source
+            </NavLink>
           </nav>
         </div>
         <div className="Header_right">

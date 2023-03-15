@@ -1,7 +1,7 @@
 @use "style/variables.scss" as variables;
 @use "style/mixins.scss" as mixins;
 
-.Home {
+.Main {
   h2 {
     font-size: 5em;
 
@@ -30,18 +30,19 @@
 
   &_listSection {
     text-align: center;
-    margin: variables.$space6 0;
+    margin: variables.$space3 0 variables.$space6 0;
 
     & > h2 {
       margin: variables.$space1;
     }
+  }
 
-    & > small {
-      font-size: 1.1em;
+  &_listSectionSubtitle {
+    font-size: 0.95em;
+    margin: variables.$space2 0;
 
-      @include mixins.medium {
-        font-size: 0.9em;
-      }
+    @include mixins.medium {
+      font-size: 0.85em;
     }
   }
 

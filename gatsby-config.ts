@@ -44,6 +44,20 @@ export const plugins: PluginRef[] = [
   {
     resolve: `gatsby-source-filesystem`,
     options: {
+      path: `${__dirname}/content/contributing`,
+      name: `contributing`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/content/maintaining`,
+      name: `maintaining`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
       name: `images`,
       path: `${__dirname}/src/images`,
     },
@@ -102,7 +116,12 @@ export const plugins: PluginRef[] = [
             });
           },
           query: `{
-              allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+              allMarkdownRemark(
+                  sort: {frontmatter: {date: DESC}},
+                  filter: {
+                    fileAbsolutePath: { regex: "/content/blog/" }
+                  }
+                ) {
                 nodes {
                   excerpt(pruneLength: 400)
                   html

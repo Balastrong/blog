@@ -47,7 +47,11 @@ const Index = ({
           }
         }
       }
-      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 6) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+        sort: { frontmatter: { date: DESC } }
+        limit: 6
+      ) {
         nodes {
           excerpt
           fields {
@@ -74,8 +78,8 @@ const Index = ({
   `);
 
   return (
-    <Layout className="Home">
-      <section className="Home_me">
+    <Layout className="Main">
+      <section className="Main_me">
         <h2 className="Shades_blue">{author.name}</h2>
         <StaticImage
           layout="fixed"
@@ -86,19 +90,19 @@ const Index = ({
           quality={100}
           alt="Profile picture"
         />
-        <div className="Home_summary">
+        <div className="Main_summary">
           <p>{author.summary}</p>
         </div>
       </section>
-      <section className="Home_listSection">
+      <section className="Main_listSection">
         <h2 className="Shades_red">YouTube</h2>
-        <small>Watch my latest videos</small>
-        <div className="Home_listContainer">
+        <div className="Main_listSectionSubtitle">Watch my latest videos</div>
+        <div className="Main_listContainer">
           {(videos ?? []).map(video => (
             <VideoThumb key={video.id.videoId} video={video} />
           ))}
         </div>
-        <div className="Home_listLink">
+        <div className="Main_listLink">
           <NavigatorButton
             link={youtube}
             text="Go to my channel"
@@ -107,15 +111,17 @@ const Index = ({
           />
         </div>
       </section>
-      <section className="Home_listSection">
+      <section className="Main_listSection">
         <h2 className="Shades_green">Blog</h2>
-        <small>Pretty much the same YouTube content, but written!</small>
-        <div className="Home_listContainer">
+        <div className="Main_listSectionSubtitle">
+          Pretty much the same YouTube content, but written!
+        </div>
+        <div className="Main_listContainer">
           {posts.map(post => (
             <PostThumb key={post.fields.slug} post={post} />
           ))}
         </div>
-        <div className="Home_listLink">
+        <div className="Main_listLink">
           <NavigatorButton
             link={"/page/1"}
             text="Go to all articles"
