@@ -2,7 +2,7 @@ export function getColorFromLanguage(language: string): {
   color: string;
   backgroundColor: string;
 } {
-  switch (language.toLowerCase()) {
+  switch (language?.toLowerCase()) {
     case "javascript":
       return {
         color: "#000",

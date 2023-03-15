@@ -6,14 +6,16 @@
   gap: variables.$space2;
   align-items: start;
   border: 1px solid black;
+  background-color: variables.$tertiary;
   border-radius: variables.$borderRadius;
   padding: variables.$space2;
+  text-align: left;
 
   &_header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: variables.$space2;
+    gap: variables.$space1;
     justify-content: space-between;
     width: 100%;
   }
@@ -36,11 +38,13 @@
 
   &_icon {
     height: 1.1rem;
+    min-width: 1.1rem;
+    margin-top: 0.3rem;
+    margin-bottom: auto;
   }
 
   &_description {
     font-size: 0.9rem;
     margin: 0;
-    text-align: left;
   }
 }

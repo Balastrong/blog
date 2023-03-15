@@ -5,17 +5,36 @@ import { RepositoryFrontmatter } from "types/gatsby";
 
 const OpenSource = () => {
   const {
-    allMarkdownRemark: { nodes: repositories },
+    contributing: { nodes: contributingRepositories },
+    maintaining: { nodes: maintainingRepositories },
   } = useStaticQuery<{
-    allMarkdownRemark: {
+    contributing: {
+      nodes: {
+        frontmatter: RepositoryFrontmatter;
+      }[];
+    };
+    maintaining: {
       nodes: {
         frontmatter: RepositoryFrontmatter;
       }[];
     };
   }>(graphql`
     {
-      allMarkdownRemark(
+      contributing: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/contributing/" } }
+        sort: { frontmatter: { name: ASC } }
+      ) {
+        nodes {
+          frontmatter {
+            name
+            owner
+            description
+            mainLanguage
+          }
+        }
+      }
+      maintaining: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/maintaining/" } }
         sort: { frontmatter: { name: ASC } }
       ) {
         nodes {
@@ -38,7 +57,7 @@ const OpenSource = () => {
           Some projects I contributed to
         </div>
         <div className="Main_listContainer">
-          {repositories.map(repository => (
+          {contributingRepositories.map(repository => (
             <RepositoryCard repository={repository.frontmatter} />
           ))}
         </div>
@@ -48,7 +67,11 @@ const OpenSource = () => {
         <div className="Main_listSectionSubtitle">
           Some projects I own or maintain
         </div>
-        <div className="Main_listContainer">blabla</div>
+        <div className="Main_listContainer">
+          {maintainingRepositories.map(repository => (
+            <RepositoryCard repository={repository.frontmatter} />
+          ))}
+        </div>
       </section>
     </Layout>
   );

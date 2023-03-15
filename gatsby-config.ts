@@ -51,6 +51,13 @@ export const plugins: PluginRef[] = [
   {
     resolve: `gatsby-source-filesystem`,
     options: {
+      path: `${__dirname}/content/maintaining`,
+      name: `maintaining`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
       name: `images`,
       path: `${__dirname}/src/images`,
     },
