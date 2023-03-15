@@ -96,7 +96,7 @@ const Index = ({
       </section>
       <section className="Main_listSection">
         <h2 className="Shades_red">YouTube</h2>
-        <small>Watch my latest videos</small>
+        <div className="Main_listSectionSubtitle">Watch my latest videos</div>
         <div className="Main_listContainer">
           {(videos ?? []).map(video => (
             <VideoThumb key={video.id.videoId} video={video} />
@@ -113,7 +113,9 @@ const Index = ({
       </section>
       <section className="Main_listSection">
         <h2 className="Shades_green">Blog</h2>
-        <small>Pretty much the same YouTube content, but written!</small>
+        <div className="Main_listSectionSubtitle">
+          Pretty much the same YouTube content, but written!
+        </div>
         <div className="Main_listContainer">
           {posts.map(post => (
             <PostThumb key={post.fields.slug} post={post} />

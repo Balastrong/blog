@@ -1,5 +1,6 @@
 ---
-name: Visual Studio Code
-url: Microsoft/vscode
+name: vscode
+owner: Microsoft
+description: Visual Studio Code
 mainLanguage: TypeScript
 ---

@@ -43,8 +43,9 @@ export type PaginatedIndexContext = {
   skip: number;
 };
 
-export type Repository = {
+export type RepositoryFrontmatter = {
   name: string;
-  url: string;
+  owner: string;
+  description: string;
   mainLanguage: string;
 };

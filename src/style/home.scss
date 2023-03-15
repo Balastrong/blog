@@ -35,13 +35,14 @@
     & > h2 {
       margin: variables.$space1;
     }
+  }
 
-    & > small {
-      font-size: 1.1em;
+  &_listSectionSubtitle {
+    font-size: 0.95em;
+    margin: variables.$space2 0;
 
-      @include mixins.medium {
-        font-size: 0.9em;
-      }
+    @include mixins.medium {
+      font-size: 0.85em;
     }
   }
 
