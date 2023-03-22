@@ -97,7 +97,7 @@ Anyway, if you click that button, the quick pick menu will open on vscode lettin
 
 ![Add labels](./labels.png)
 
-And as I [mention in the video](), this is exactly where I found the bug!
+And as I [mention in the video](https://youtu.be/Ma67EbIHi64), this is exactly where I found the bug!
 
 https://github.com/microsoft/vscode-pull-request-github/pull/4637
 
