@@ -33,7 +33,7 @@ The first thing you need to do is to install the official **GitHub Pull Requests
 
 ![GitHub Pull Requests and Issues](./github-extension.png)
 
-_Note_: make sure to not get confused, the extension called "GitHub" is and old one and deprecated. The new one is called "GitHub Pull Requests and Issues".
+_Note_: make sure to not get confused, the extension called "GitHub" is an old one and deprecated. The new one is called "GitHub Pull Requests and Issues".
 
 As soon as the extension is installed, you'll see a new icon in the Activity Bar on the left side of Visual Studio Code:
 
