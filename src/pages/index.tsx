@@ -146,6 +146,10 @@ export const getServerData = async () => {
     props: {
       foo: "bar",
       videos,
+      headers: {
+        "Cache-Control":
+          "public, max-age=600, s-maxage=600, stale-while-revalidate=300",
+      },
     },
   };
 };
