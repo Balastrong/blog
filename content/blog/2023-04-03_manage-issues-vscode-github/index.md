@@ -1,6 +1,6 @@
 ---
 title: Manage GitHub Issues from Visual Studio Code
-date: 2023-04-04
+date: 2023-04-03
 featuredImage: ./_cover.png
 description: From Visual Studio Code you can manage issues on GitHub without leaving the editor!
 tags:
