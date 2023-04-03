@@ -106,3 +106,15 @@ https://github.com/microsoft/vscode-pull-request-github/pull/4637
 Ok, at this point we've seen pretty much everything we needed, we created the Pull Request from the Create button and if you go on GitHub you can see it's there, ready to be reviewed.
 
 Speaking of reviewing Pull Requests... wouldn't be cool if this was also possible from Visual Studio Code? Well, you're in luck, because that's exactly what we're going to see in the next article of this three articles series! Stay tuned!
+
+---
+
+## The video series
+
+As mentioned at the beginning of the article, this is the first of a trilogy about the GitHub+VSCode workflow.
+
+Each article will be accompanied by a video on YouTube, you can find them here:
+
+1. [Create a Pull Request from Visual Studio Code](https://youtu.be/Ma67EbIHi64)
+2. [Review a Pull Request from Visual Studio Code](https://youtu.be/DSl-L6B_Qb4)
+3. [GitHub Issues on Visual Studio Code](https://youtu.be/-nfUgBLBTIo)

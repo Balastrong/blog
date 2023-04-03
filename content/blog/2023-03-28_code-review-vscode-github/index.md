@@ -120,3 +120,15 @@ That's it for today!
 Last week we learned how to create a Pull Request from Visual Studio Code, and today we saw how to give it a review. Who knows what's in part 3! What will we learn next week? Well.. I know but I'm not telling you! 😜
 
 See you next week!
+
+---
+
+## The video series
+
+As mentioned at the beginning of the article, this is the second of a trilogy about the GitHub+VSCode workflow.
+
+Each article will be accompanied by a video on YouTube, you can find them here:
+
+1. [Create a Pull Request from Visual Studio Code](https://youtu.be/Ma67EbIHi64)
+2. [Review a Pull Request from Visual Studio Code](https://youtu.be/DSl-L6B_Qb4)
+3. [GitHub Issues on Visual Studio Code](https://youtu.be/-nfUgBLBTIo)
