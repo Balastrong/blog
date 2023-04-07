@@ -5,10 +5,6 @@
   flex-direction: column;
   gap: variables.$space2;
   align-items: start;
-  border: 1px solid black;
-  background-color: variables.$tertiary;
-  border-radius: variables.$borderRadius;
-  padding: variables.$space2;
   text-align: left;
 
   &_header {
@@ -28,6 +24,8 @@
     background-color: aquamarine;
     font-size: 0.7em;
     text-transform: uppercase;
+    margin-top: 0.3rem;
+    margin-bottom: auto;
   }
 
   &_title {

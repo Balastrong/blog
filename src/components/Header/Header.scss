@@ -72,8 +72,12 @@ $gapSmall: style.$space1;
 }
 
 .NavLink {
-  height: 100%;
-  text-decoration: none;
+  margin: auto;
+
+  &_link {
+    height: 100%;
+    text-decoration: none;
+  }
 
   &:hover {
     color: style.$primary;

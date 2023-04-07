@@ -97,10 +97,10 @@ const NavLink = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div>
+    <div className="NavLink">
       <Link
         to={to}
-        className={`NavLink ${active && "NavLink___active"}`}
+        className={`NavLink_link ${active && "NavLink___active"}`}
         title={to}
         aria-label={to}
       >
