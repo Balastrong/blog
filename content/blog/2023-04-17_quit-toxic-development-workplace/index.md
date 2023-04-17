@@ -1,6 +1,6 @@
 ---
 title: I QUIT from a TOXIC Workplace for Developers
-date: 2023-04-18
+date: 2023-04-17
 featuredImage: ./_cover.png
 description:
 tags:
