@@ -1,6 +1,6 @@
 ---
 title: "Using Copilot X CLI on my blog"
-date: 2023-05-02
+date: 2023-05-01
 featuredImage: ./_cover.png
 description: Spending 10 minutes to automate a 5 minutes task with AI and bash scripts
 tags:
